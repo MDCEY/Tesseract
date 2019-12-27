@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workshop", "Workshop\Worksh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cli", "Cli\Cli.csproj", "{AD02EDED-9837-42AE-A131-3C21D6776BFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gui", "Gui\Gui.csproj", "{10B3652A-D7B5-42E5-8F19-CF8F81A7FCEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{AD02EDED-9837-42AE-A131-3C21D6776BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD02EDED-9837-42AE-A131-3C21D6776BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD02EDED-9837-42AE-A131-3C21D6776BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10B3652A-D7B5-42E5-8F19-CF8F81A7FCEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B3652A-D7B5-42E5-8F19-CF8F81A7FCEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B3652A-D7B5-42E5-8F19-CF8F81A7FCEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B3652A-D7B5-42E5-8F19-CF8F81A7FCEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

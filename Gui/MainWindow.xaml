@@ -1,0 +1,75 @@
+﻿<Window x:Class="Gui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gui"
+        mc:Ignorable="d"
+        Title="Tesseract" Height="210" Width="250">
+	<StackPanel Margin="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+				<!-- Data output grid -->
+				<Border BorderThickness="1" BorderBrush="#FFD5FFC2">
+				<Border.Background>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#FF7CB2E8" Offset="0"/>
+						<GradientStop Color="#FFF9C9C9" Offset="1"/>
+					</LinearGradientBrush>
+				</Border.Background>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+
+					<StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
+						<Label>Total Repairs:</Label>
+						<Label x:Name="TotalRepairs"/>
+					</StackPanel>
+					<StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal">
+						<Label>Total Time:</Label>
+						<Label x:Name="TotalTime"/>
+					</StackPanel>
+				</Grid>
+				</Border>
+			<!-- Data configuration -->
+				<Grid Grid.Row="1">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+					<Grid Grid.Row="0">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+						
+						<Label Grid.Row="0" Grid.Column="0" Content="_Engineer Number" Target="{Binding ElementName=EngineerInput}"/>
+						<TextBox Grid.Row="1" Grid.Column="0" Margin="10" x:Name="EngineerInput"/>
+					<CheckBox x:Name="GetTime" Grid.Row="0" Grid.Column="1">Read Time</CheckBox>
+					<CheckBox x:Name="GetRepairs" Grid.Row="1" Grid.Column="1">Read Repairs</CheckBox>
+					</Grid>
+					<Button Grid.Row="1" Click="GetRepairs_OnClick" Content="Get Repairs" IsDefault="True" />
+			</Grid>
+
+	            
+			</Grid>
+        </StackPanel>
+</Window>
