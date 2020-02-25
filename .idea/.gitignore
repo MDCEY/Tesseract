@@ -1,3 +1,5 @@
-
-# Default ignored files
+﻿# Default ignored files
 /.idea.Tesseract/.idea/workspace.xml
+# Datasource local storage ignored files
+/.idea.Tesseract/.idea/dataSources/
+/.idea.Tesseract/.idea/dataSources.local.xml

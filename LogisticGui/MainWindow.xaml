@@ -1,0 +1,16 @@
+﻿<Window x:Class="LogisticGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Destructor" Height="250" Width="200" Background="#FF958F8F">
+    <StackPanel Margin="5">
+		<Label>Destruction Reference</Label>
+		<TextBox  x:Name="Ref" Background="White" MaxLength="10"></TextBox>
+        <Label>Serial Number</Label>
+		<TextBox  x:Name="Serial" Background="White" MaxLength="24"></TextBox>
+        <Button Margin="0 5" MinHeight="25" Click="ButtonBase_OnClick" IsDefault="True">Update</Button>
+        <TextBlock Height="auto" x:Name="Exceptions" Foreground="Red" MouseLeftButtonDown="Exceptions_OnMouseLeftButtonDown" TextWrapping="Wrap"></TextBlock>
+    </StackPanel>
+</Window>

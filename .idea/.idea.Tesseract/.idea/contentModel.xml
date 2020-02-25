@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\kieran.wynne\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\kieran.wynne\.Rider2019.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\kieran.wynne\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\kieran.wynne\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Tesseract.2042801234.00" t="ExcludeRecursive" />
-    <e p="C:\Users\kieran.wynne\Projects\RiderProjects\Tesseract" t="IncludeFlat">
+    <e p="C:\Users\kieran.wynne\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\kieran.wynne\.Rider2019.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\kieran.wynne\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\kieran.wynne\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Tesseract.1915009914.00" t="ExcludeRecursive" />
+    <e p="C:\Users\kieran.wynne\Projects\Tesseract" t="IncludeFlat">
+      <e p="callUnrepairGui" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="callUnrepairGui.csproj" t="IncludeRecursive" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="App.g.cs" t="Include" />
+            <e p="MainWindow.g.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+      </e>
       <e p="Cli" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Cli.csproj" t="IncludeRecursive" />
@@ -16,19 +38,56 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
       </e>
-      <e p="gui" t="IncludeRecursive">
+      <e p="Gui" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="App.xaml" t="Include" />
         <e p="App.xaml.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="gui.csproj" t="IncludeRecursive" />
+        <e p="Gui.csproj" t="IncludeRecursive" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="App.g.cs" t="Include" />
+            <e p="MainWindow.g.cs" t="Include" />
+          </e>
+        </e>
+        <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
           <e p="Resources.Designer.cs" t="Include" />
           <e p="Resources.resx" t="Include" />
+        </e>
+      </e>
+      <e p="LogisticGui" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="LogisticGui.csproj" t="IncludeRecursive" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="App.g.cs" t="Include" />
+            <e p="MainWindow.g.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+      </e>
+      <e p="Logistics" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="Logistics.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
@@ -41,6 +100,26 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="Workshop.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="wrapMe" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="App.g.cs" t="Include" />
+            <e p="MainWindow.g.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+        </e>
+        <e p="wrapMe.csproj" t="IncludeRecursive" />
       </e>
     </e>
   </component>

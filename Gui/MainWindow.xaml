@@ -3,10 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Gui"
         mc:Ignorable="d"
-        Title="Tesseract" Height="210" Width="250">
-	<StackPanel Margin="10">
+        Title="Tesseract" Height="220" Width="250">
+	<StackPanel x:Name="TopPanel" Margin="10">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -23,7 +22,7 @@
 						<GradientStop Color="#FFF9C9C9" Offset="1"/>
 					</LinearGradientBrush>
 				</Border.Background>
-				<Grid>
+				<Grid> 
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
 					</Grid.ColumnDefinitions>
@@ -59,17 +58,20 @@
 						<Grid.RowDefinitions>
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
 					</Grid.RowDefinitions>
 						
 						<Label Grid.Row="0" Grid.Column="0" Content="_Engineer Number" Target="{Binding ElementName=EngineerInput}"/>
-						<TextBox Grid.Row="1" Grid.Column="0" Margin="10" x:Name="EngineerInput"/>
+						<TextBox Grid.Row="1" Grid.Column="0" Margin="2" x:Name="EngineerInput" TextChanged="EngineerInput_OnTextChanged"/>
 					<CheckBox x:Name="GetTime" Grid.Row="0" Grid.Column="1">Read Time</CheckBox>
 					<CheckBox x:Name="GetRepairs" Grid.Row="1" Grid.Column="1">Read Repairs</CheckBox>
+					<CheckBox x:Name="ToggleLoop" Grid.Row="2" Grid.Column="1">Run in loop</CheckBox>
 					</Grid>
-					<Button Grid.Row="1" Click="GetRepairs_OnClick" Content="Get Repairs" IsDefault="True" />
+					<Button x:Name="RunButton"  Grid.Row="1" Click="GetRepairs_OnClick" Content="Get Repairs" IsDefault="True" IsEnabled="False"/>
 			</Grid>
 
 	            
 			</Grid>
+		<ProgressBar MinHeight="10px" Margin="0 5" x:Name="RunningLoop" Foreground="#FF8701D3" Maximum="5000"></ProgressBar>
         </StackPanel>
 </Window>
