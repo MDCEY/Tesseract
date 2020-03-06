@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Kansū
 {
@@ -26,7 +25,7 @@ namespace Kansū
 
     internal class PartsCage
     {
-        private static List<MovedPart> engineerParts()
+        private static List<MovedPart> EngineerParts()
         {
             const string query =
                 @"SELECT Audit_Part_Num as 'PartNumber', Part_Desc as 'Description', Audit_Last_Update as 'MovedAt', Employ_Name 'Engineer', Stock_Bin 'Location', Audit_Qty 'Quantity'   FROM SCAudit
@@ -49,25 +48,29 @@ namespace Kansū
             {
                 MovedPart row = new MovedPart
                 {
-                    partNumber = reader["PartNumber"].ToString(),
-                    partDescription = reader["Description"].ToString(),
-                    movedAt = (DateTime)reader["MovedAt"],
-                    engineer = reader["Engineer"].ToString(),
-                    location = reader["Location"].ToString(),
-                    quantity = (int)reader["Quantity"]
-                };
+                    PartNumber = reader["PartNumber"].ToString(),
+                    PartDescription = reader["Description"].ToString(),
+                    MovedAt = (DateTime)reader["MovedAt"],
+                    Engineer = reader["Engineer"].ToString(),
+                    Location = reader["Location"].ToString(),
+                    Quantity = (int)reader["Quantity"]
+                }; 
+                rows.Add(row);
             }
-
+            connection.Dispose();
+            command.Dispose();
+            reader.Dispose();
+            return rows;
         }
 
         public struct MovedPart
         {
-            public string partNumber;
-            public string partDescription;
-            public DateTime movedAt;
-            public string engineer;
-            public string location;
-            public int quantity;
+            public string PartNumber;
+            public string PartDescription;
+            public DateTime MovedAt;
+            public string Engineer;
+            public string Location;
+            public int Quantity;
         }
     }
 }
