@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "callUnrepairGui", "callUnre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wrapMe", "wrapMe\wrapMe.csproj", "{9D87BABC-05E1-4B77-9B2B-D1FA93E18F8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kansū", "Kansū\Kansū.csproj", "{3ED352E4-06AE-4EBE-8688-37837958384C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{9D87BABC-05E1-4B77-9B2B-D1FA93E18F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D87BABC-05E1-4B77-9B2B-D1FA93E18F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D87BABC-05E1-4B77-9B2B-D1FA93E18F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED352E4-06AE-4EBE-8688-37837958384C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED352E4-06AE-4EBE-8688-37837958384C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED352E4-06AE-4EBE-8688-37837958384C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED352E4-06AE-4EBE-8688-37837958384C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
