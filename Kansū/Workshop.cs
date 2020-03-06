@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Kansū
 {
-    public class Workshop
+    public static class Workshop
     {
         public static int RepairsToday(string engineerNumber)
         {
@@ -16,16 +17,18 @@ namespace Kansū
 
             var database = new Database();
             var connection = database.Connection;
-            var command = database.CreateCommand(connection, query);
+            database.CreateCommand(query);
+            var command = database.Command;
             command.Parameters.AddWithValue("@User", engineerNumber);
 
             var reader = command.ExecuteReader();
             while (reader.Read()) total = reader.GetInt32(0);
+            database.Dispose();
             return total;
         }
     }
 
-    public class PartsCage
+    public static class PartsCage
     {
         public static List<MovedPart> EngineerParts()
         {
@@ -43,7 +46,8 @@ namespace Kansū
                     AND Audit_Dest_Site_Num LIKE '%BK'";
             var database = new Database();
             var connection = database.Connection;
-            var command = database.CreateCommand(connection, query);
+            database.CreateCommand(query);
+            var command = database.Command;
             var reader = command.ExecuteReader();
             var rows = new List<MovedPart>();
             while (reader.Read())
@@ -59,12 +63,12 @@ namespace Kansū
                 }; 
                 rows.Add(row);
             }
-            connection.Dispose();
-            command.Dispose();
+            database.Dispose();
             reader.Dispose();
             return rows;
         }
 
+        [SuppressMessage("ReSharper", "NotAccessedField.Local")]
         public struct MovedPart
         {
             public string PartNumber;

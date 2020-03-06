@@ -23,6 +23,9 @@ namespace Kurikku
     {
         public MainWindow()
         {
+            Logistics_PartMovements lpWindow = new Logistics_PartMovements();
+            lpWindow.Owner = this;
+            lpWindow.Show();
             InitializeComponent();
         }
 
