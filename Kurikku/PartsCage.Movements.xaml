@@ -1,0 +1,23 @@
+﻿<Window x:Class="Kurikku.PartsCageMovements"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Kurikku"
+        mc:Ignorable="d"
+        Title="Kurriku: Part Order by Kieran Wynne " Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="MovementList">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Part Number" DisplayMemberBinding="{Binding PartNumber}"/>
+                    <GridViewColumn Header="Part Description" DisplayMemberBinding="{Binding PartDescription}"/>
+                    <GridViewColumn Header="Moved At" DisplayMemberBinding="{Binding MovedAt}"/>
+                    <GridViewColumn Header="Engineer" DisplayMemberBinding="{Binding Engineer}"/>
+                    <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}"/>
+                    <GridViewColumn Header="Quantity" DisplayMemberBinding="{Binding Quantity}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

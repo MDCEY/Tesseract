@@ -21,18 +21,17 @@ namespace Kurikku
     /// </summary>
     public partial class MainWindow : Window
     {
+        PartsCageMovements PartsCageMovementsWindow = new PartsCageMovements();
+
         public MainWindow()
         {
-            Logistics_PartMovements lpWindow = new Logistics_PartMovements();
-            lpWindow.Owner = this;
-            lpWindow.Show();
             InitializeComponent();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void ShowPartsCage_OnClick(object sender, RoutedEventArgs e)
         {
-            var data = PartsCage.EngineerParts();
-
+            this.Close();
+            PartsCageMovementsWindow.Show();
         }
     }
 }
