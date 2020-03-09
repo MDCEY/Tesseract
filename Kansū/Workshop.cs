@@ -68,15 +68,14 @@ namespace Kansū
             return rows;
         }
 
-        [SuppressMessage("ReSharper", "NotAccessedField.Local")]
-        public struct MovedPart
+        public class MovedPart
         {
-            public string PartNumber;
-            public string PartDescription;
-            public DateTime MovedAt;
-            public string Engineer;
-            public string Location;
-            public int Quantity;
+            public string PartNumber  { get; set; }
+            public string PartDescription  { get; set; }
+            public DateTime MovedAt { get; set; }
+            public string Engineer { get; set; }
+            public string Location { get; set; }
+            public int Quantity { get; set; }
         }
     }
 }
