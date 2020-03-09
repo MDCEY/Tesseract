@@ -5,18 +5,60 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Kurikku"
         mc:Ignorable="d"
-        Title="Kurriku: Part Order by Kieran Wynne " Height="450" Width="800">
-    <Grid>
+        Title="Kurriku: Part Order by Kieran Wynne " Height="450" Width="900">
+    <Grid >
         <ListView x:Name="MovementList">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Part Number" DisplayMemberBinding="{Binding PartNumber}"/>
-                    <GridViewColumn Header="Part Description" DisplayMemberBinding="{Binding PartDescription}"/>
-                    <GridViewColumn Header="Moved At" DisplayMemberBinding="{Binding MovedAt}"/>
-                    <GridViewColumn Header="Engineer" DisplayMemberBinding="{Binding Engineer}"/>
-                    <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}"/>
-                    <GridViewColumn Header="Quantity" DisplayMemberBinding="{Binding Quantity}"/>
+                    <GridViewColumn  Header="Part Number">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PartNumber}" FontSize="16"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn  Header="Part Description">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PartDescription}" FontSize="16"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn  Header="Moved At">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding MovedAt}" FontSize="16"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn  Header="Engineer">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Engineer}" FontSize="16"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn  Header="Location">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Location}" FontSize="16"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn  Header="Quantity">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Quantity}" FontSize="16"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
+                
             </ListView.View>
         </ListView>
     </Grid>
