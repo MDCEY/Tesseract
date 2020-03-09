@@ -1,0 +1,52 @@
+﻿<Window x:Class="Kurikku.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kurikku"
+        mc:Ignorable="d"
+        Title="Kurikku by Kieran Wynne" Height="450" Width="800"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button x:Name="ShowPartsCage" FontSize="48" Grid.Column="0" Grid.Row="0" Click="ShowPartsCage_OnClick">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFD746C" Offset="0"/>
+                    <GradientStop Color="#FFFF9068" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background> Parts Cage
+        </Button>
+        <Button x:Name="ShowLogistics" FontSize="48" Grid.Column="0" Grid.Row="1" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA044FF" Offset="0"/>
+                    <GradientStop Color="#FF6A3093" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background> Logistics
+        </Button>
+        <Button x:Name="ShowWorkshop" FontSize="48" Grid.Column="1" Grid.Row="0" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC2E59C" Offset="0"/>
+                    <GradientStop Color="#FF64B3F4" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background> Workshop
+        </Button>
+        <Button x:Name="ShowOther" FontSize="48" Grid.Column="1" Grid.Row="1" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00BF8F" Offset="0"/>
+                    <GradientStop Color="#FF001510" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background> Other
+        </Button>
+    </Grid>
+</Window>

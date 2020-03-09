@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 // Backend stuffs
 namespace Kansū
 {
-    internal class Database
+    internal class Database : IDisposable
     {
         internal SqlConnection Connection;
+        internal SqlCommand Command;
 
         internal Database()
         {
@@ -20,15 +21,19 @@ namespace Kansū
             Connection = new SqlConnection(decodedConnectionString);
         }
 
-        internal SqlCommand CreateCommand(SqlConnection connection, string query)
+        internal void CreateCommand(string query)
         {
             SqlCommand command = new SqlCommand();
-            connection.Open();
-            command.Connection = connection;
+            Connection.Open();
+            command.Connection = Connection;
             command.CommandType = CommandType.Text;
             command.CommandText = query;
-            return command;
-
+            Command = command;
         }
+
+        public void Dispose()
+        {
+            Connection.Dispose();
+            Command.Dispose();        }
     }
 }

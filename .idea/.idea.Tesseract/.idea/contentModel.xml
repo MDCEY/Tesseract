@@ -15,7 +15,7 @@
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="App.g.cs" t="Include" />
             <e p="MainWindow.g.cs" t="Include" />
           </e>
@@ -47,7 +47,7 @@
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="App.g.cs" t="Include" />
             <e p="MainWindow.g.cs" t="Include" />
           </e>
@@ -64,10 +64,40 @@
         <e p="Database.cs" t="Include" />
         <e p="Kansū.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="Workshop.cs" t="Include" />
+      </e>
+      <e p="Kurikku" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Kurikku.csproj" t="IncludeRecursive" />
+        <e p="Logistics.PartMovements.xaml" t="Include" />
+        <e p="Logistics.PartMovements.xaml.cs" t="Include" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="App.g.cs" t="Include" />
+            <e p="Logistics.PartMovements.g.cs" t="Include" />
+            <e p="MainWindow.g.cs" t="Include" />
+            <e p="PartsCage.Movements.g.cs" t="Include" />
+          </e>
+        </e>
+        <e p="packages.config" t="Include" />
+        <e p="PartsCage.Movements.xaml" t="Include" />
+        <e p="PartsCage.Movements.xaml.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
       </e>
       <e p="LogisticGui" t="IncludeRecursive">
         <e p="App.config" t="Include" />
@@ -78,7 +108,7 @@
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="App.g.cs" t="Include" />
             <e p="MainWindow.g.cs" t="Include" />
           </e>
@@ -100,8 +130,22 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
       </e>
-      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive">
+        <e p="MSTest.TestAdapter.1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
+        <e p="MSTest.TestAdapter.1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
+        <e p="MSTest.TestAdapter.1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
+      </e>
       <e p="Tesseract.sln" t="IncludeFlat" />
+      <e p="UnitTests" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="UnitTest1.cs" t="Include" />
+        <e p="UnitTests.csproj" t="IncludeRecursive" />
+      </e>
       <e p="Workshop" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Class1.cs" t="Include" />
@@ -119,7 +163,7 @@
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="App.g.cs" t="Include" />
             <e p="MainWindow.g.cs" t="Include" />
           </e>
