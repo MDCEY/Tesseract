@@ -1,7 +1,6 @@
 ﻿using System;
-using System.CodeDom.Compiler;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Kansū;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests
 {

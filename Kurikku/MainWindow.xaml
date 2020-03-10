@@ -9,12 +9,12 @@
         >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Button x:Name="ShowPartsCage" FontSize="48" Grid.Column="0" Grid.Row="0" Click="ShowPartsCage_OnClick">
             <Button.Background>

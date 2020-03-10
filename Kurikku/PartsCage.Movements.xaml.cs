@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Globalization;
+﻿using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
-using System.Windows.Documents;
 using Kansū;
 
 namespace Kurikku
@@ -24,7 +20,7 @@ namespace Kurikku
             {
                 if (this.IsVisible)
                 {
-                    MovementList.ItemsSource = await Task.Run(() => Kansū.PartsCage.EngineerParts());
+                    MovementList.ItemsSource = await Task.Run(() => PartsCage.EngineerParts());
                     CollectionView view =
                         (CollectionView) CollectionViewSource.GetDefaultView(MovementList.ItemsSource);
                     view.SortDescriptions.Add(new SortDescription("MovedAt", ListSortDirection.Descending));

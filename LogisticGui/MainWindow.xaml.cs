@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using Logistics;
 
 namespace LogisticGui
 {
@@ -33,7 +34,7 @@ namespace LogisticGui
 
             try
             {
-                int affectedRows = Logistics.Other.AddDestructionTag(serialNumber, destructionReference);
+                int affectedRows = Other.AddDestructionTag(serialNumber, destructionReference);
  
                 if (affectedRows != 1)
                 {

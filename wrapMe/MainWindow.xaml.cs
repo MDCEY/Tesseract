@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using Logistics;
 
 namespace wrapMe
@@ -17,7 +15,7 @@ namespace wrapMe
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            TotalJobs.Content = $"{Logistics.Repairs.Wrapme()} Jobs to wrap.";
+            TotalJobs.Content = $"{Repairs.Wrapme()} Jobs to wrap.";
         }
     }
     

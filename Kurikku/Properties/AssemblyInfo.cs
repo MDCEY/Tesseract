@@ -1,16 +1,14 @@
 ﻿using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Kurikku")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Tesseract")]
+[assembly: AssemblyDescription("Tesseract Enhancement Suite")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Kieran Wynne")]
 [assembly: AssemblyProduct("Kurikku")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2020")]
 [assembly: AssemblyTrademark("")]
