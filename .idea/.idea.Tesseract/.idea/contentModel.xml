@@ -63,6 +63,9 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Database.cs" t="Include" />
         <e p="Kansū.csproj" t="IncludeRecursive" />
+        <e p="MoreLinq" t="Include">
+          <e p="MoreEnumerable.DistinctBy.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
@@ -76,18 +79,9 @@
         <e p="App.xaml.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Kurikku.csproj" t="IncludeRecursive" />
-        <e p="Logistics.PartMovements.xaml" t="Include" />
-        <e p="Logistics.PartMovements.xaml.cs" t="Include" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
-            <e p="App.g.cs" t="Include" />
-            <e p="Logistics.PartMovements.g.cs" t="Include" />
-            <e p="MainWindow.g.cs" t="Include" />
-            <e p="PartsCage.Movements.g.cs" t="Include" />
-          </e>
-        </e>
+        <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />
         <e p="PartsCage.Movements.xaml" t="Include" />
         <e p="PartsCage.Movements.xaml.cs" t="Include" />
@@ -98,6 +92,13 @@
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
         </e>
+        <e p="resources" t="Include">
+          <e p="Roboto-Black.ttf" t="Include" />
+          <e p="Roboto-Regular.ttf" t="Include" />
+          <e p="Roboto-Thin.ttf" t="Include" />
+        </e>
+        <e p="Workshop.xaml" t="Include" />
+        <e p="Workshop.xaml.cs" t="Include" />
       </e>
       <e p="LogisticGui" t="IncludeRecursive">
         <e p="App.config" t="Include" />

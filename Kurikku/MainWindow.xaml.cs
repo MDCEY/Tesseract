@@ -1,13 +1,16 @@
 ﻿using System.Windows;
+using System.Windows.Input;
+using System.Windows.Controls;
 
 namespace Kurikku
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        PartsCageMovements PartsCageMovementsWindow = new PartsCageMovements();
+        private readonly PartsCageMovements PartsCageMovementsWindow = new PartsCageMovements();
+        private readonly Workshop WorkshopWindow = new Workshop();
 
         public MainWindow()
         {
@@ -16,8 +19,19 @@ namespace Kurikku
 
         private void ShowPartsCage_OnClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
             PartsCageMovementsWindow.Show();
+        }
+
+        private void ShowWorkshop_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+            WorkshopWindow.Show();
+        }
+
+        private void UIElement_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left) DragMove();
         }
     }
 }

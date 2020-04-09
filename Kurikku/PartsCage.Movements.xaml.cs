@@ -17,11 +17,10 @@ namespace Kurikku
         private async void FetchParts()
         {
             while (true)
-            {
-                if (this.IsVisible)
+                if (IsVisible)
                 {
                     MovementList.ItemsSource = await Task.Run(() => PartsCage.EngineerParts());
-                    CollectionView view =
+                    var view =
                         (CollectionView) CollectionViewSource.GetDefaultView(MovementList.ItemsSource);
                     view.SortDescriptions.Add(new SortDescription("MovedAt", ListSortDirection.Descending));
                     await Task.Delay(10000);
@@ -30,9 +29,6 @@ namespace Kurikku
                 {
                     await Task.Delay(10);
                 }
-                
-            }
         }
-        
     }
 }
