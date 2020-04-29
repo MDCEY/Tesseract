@@ -7,10 +7,10 @@
         Title="Destructor" Height="250" Width="200" Background="#FF958F8F">
     <StackPanel Margin="5">
 		<Label>Destruction Reference</Label>
-		<TextBox  x:Name="Ref" Background="White" MaxLength="10"></TextBox>
-        <Label>Serial Number</Label>
-		<TextBox  x:Name="Serial" Background="White" MaxLength="24"></TextBox>
-        <Button Margin="0 5" MinHeight="25" Click="ButtonBase_OnClick" IsDefault="True">Update</Button>
-        <TextBlock Height="auto" x:Name="Exceptions" Foreground="Red" MouseLeftButtonDown="Exceptions_OnMouseLeftButtonDown" TextWrapping="Wrap"></TextBlock>
+		<TextBox  x:Name="Ref" Background="White" MaxLength="10" />
+		<Label>Serial Number</Label>
+		<TextBox  x:Name="Serial" Background="White" MaxLength="24" />
+		<Button Margin="0 5" MinHeight="25" Click="ButtonBase_OnClick" IsDefault="True">Update</Button>
+        <TextBlock Height="auto" x:Name="Exceptions" Foreground="Red" MouseLeftButtonDown="Exceptions_OnMouseLeftButtonDown" TextWrapping="Wrap" />
     </StackPanel>
 </Window>

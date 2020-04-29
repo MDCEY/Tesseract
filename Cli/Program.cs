@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using Workshop;
 using CommandLine;
 using TemplateEngine.Docx;
+using Workshop;
 
 namespace Tesseract
 {

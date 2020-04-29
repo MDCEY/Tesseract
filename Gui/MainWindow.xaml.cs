@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Workshop;
+
 namespace Gui
 {
     /// <summary>
@@ -24,8 +26,8 @@ namespace Gui
             if (fetchRepairs)
             {
                 TotalRepairs.Content = EngineerInput.Text.Length > 0
-                    ? $"{Workshop.Engineer.RepairsToday(EngineerInput.Text)} Repairs"
-                    : $"{Workshop.Team.RepairsToday()} Total Repairs";
+                    ? $"{Engineer.RepairsToday(EngineerInput.Text)} Repairs"
+                    : $"{Team.RepairsToday()} Total Repairs";
             }
             else
             {
@@ -35,7 +37,7 @@ namespace Gui
             if (fetchTime)
             {
                 TotalTime.Content = EngineerInput.Text.Length > 0
-                    ? $"{Workshop.Engineer.RepairedWorkingTime(EngineerInput.Text)}"
+                    ? $"{Engineer.RepairedWorkingTime(EngineerInput.Text)}"
                     : "";
             }
             else

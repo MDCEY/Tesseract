@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-
+using Workshop;
 
 namespace callUnrepairGui
 {
@@ -16,7 +16,7 @@ namespace callUnrepairGui
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             string callNum = CallInput.Text;
-            Workshop.Other.UnRepair(callNum);
+            Other.UnRepair(callNum);
             CallInput.Text = "";
         }
     }

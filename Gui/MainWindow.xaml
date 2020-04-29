@@ -72,6 +72,6 @@
 
 	            
 			</Grid>
-		<ProgressBar MinHeight="10px" Margin="0 5" x:Name="RunningLoop" Foreground="#FF8701D3" Maximum="5000"></ProgressBar>
-        </StackPanel>
+		<ProgressBar MinHeight="10px" Margin="0 5" x:Name="RunningLoop" Foreground="#FF8701D3" Maximum="5000" />
+	</StackPanel>
 </Window>
