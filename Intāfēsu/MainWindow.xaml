@@ -1,0 +1,72 @@
+﻿<Controls:MetroWindow x:Class="Intāfēsu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:Intāfēsu"
+        mc:Ignorable="d"
+        Title="Intāfēsu" Height="450" Width="800"
+        SaveWindowPosition="True"
+        BorderThickness="0" 
+        GlowBrush="Black">
+    <StackPanel>
+
+	    <TabControl>
+            <TabItem Header="Workshop" x:Name="WorkshopTab">
+				<StackPanel>
+	            <StackPanel Orientation="Horizontal">
+
+						<Controls:Tile  
+				               Width="100"
+				               Height="100" 
+				               x:Name="ConfigTile"
+				               Click="ConfigTile_OnClick">
+							<Grid>
+						<iconPacks:PackIconMaterial Width="90" Height="90" Margin="5" Kind="AccountCog"  VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="ConfigIcon" Visibility="Visible"/>
+						<TextBlock Width="90" Height="90" Margin="5" TextAlignment="Center" x:Name="IndieStats" Visibility="Hidden">
+							<Run Text="Repairs" FontSize="16"></Run>
+							<LineBreak></LineBreak>
+							<Run FontSize="16" x:Name="IndieRepairs"></Run>
+							<LineBreak></LineBreak>
+							<Run Text="Time Spent" FontSize="16"></Run>
+							<LineBreak></LineBreak>
+							<Run FontSize="16" x:Name="IndieTimeSpent"></Run>
+						</TextBlock>
+						</Grid>
+						</Controls:Tile>
+			</StackPanel>
+					<TabControl>
+						<TabItem Header="Recently Booked In" x:Name="RecentlyIn" MouseLeftButtonUp="RecentlyIn_OnMouseLeftButtonUp">
+							<DataGrid x:Name="RecentlyInData" MaxHeight="240"></DataGrid>
+						</TabItem>
+						<TabItem Header="RecentParts" x:Name="RecentParts"  MouseLeftButtonUp="RecentParts_OnMouseLeftButtonUp">
+							<DataGrid x:Name="RecentPartsData" MaxHeight="240"></DataGrid>
+						</TabItem>
+						<TabItem Header="Recent Repairs" x:Name="RecentRepairs" MouseLeftButtonUp="RecentRepairs_OnMouseLeftButtonUp">
+							<DataGrid x:Name="RecentRepairData" MaxHeight="240"></DataGrid>
+						</TabItem>
+					</TabControl>
+				</StackPanel>
+
+			</TabItem>
+			<TabItem Header="Parts Cage" x:Name="PartsCageTab"></TabItem>
+	    </TabControl>
+	  
+	</StackPanel>
+	<Controls:MetroWindow.Flyouts>
+		<Controls:FlyoutsControl>
+			<Controls:Flyout Header="Flyout" Position="Right" Width="200" x:Name="ConfigFlyout">
+				<StackPanel>
+					<TextBox
+	                    x:Name="EngineerNumberInput"
+	                    KeyUp="EngineerNumberInput_OnKeyUp"
+						Controls:TextBoxHelper.Watermark="Engineer Number"
+						Controls:TextBoxHelper.ClearTextButton="True"
+	                    Margin="5"/>
+				</StackPanel>
+			</Controls:Flyout>
+		</Controls:FlyoutsControl>
+	</Controls:MetroWindow.Flyouts>
+</Controls:MetroWindow>

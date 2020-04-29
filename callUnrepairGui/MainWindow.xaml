@@ -7,7 +7,7 @@
         Title="MainWindow" Height="125" Width="200" Background="#FF462674" Foreground="White">
     <StackPanel>
         <Label Foreground="#FFFBFBFB">Call Number</Label>
-        <TextBox x:Name="CallInput"></TextBox>
+        <TextBox x:Name="CallInput" />
         <Button Click="ButtonBase_OnClick" IsDefault="True">
             UnRepair
         </Button>
