@@ -13,6 +13,9 @@
 				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
 				<!-- Animated single row Tab Control -->
 				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+				<!-- Azure datagrid -->
+				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/controls.datagrid.xaml" />
+
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
     </Application.Resources>

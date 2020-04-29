@@ -21,32 +21,75 @@ namespace Intāfēsu
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        public string EngineerNumber;
 
         public MainWindow()
         {
             InitializeComponent();
-        }
+ }
 
-        private void EngineerNumberInput_OnKeyDown(object sender, KeyEventArgs e)
+        private async Task indieStats()
         {
-            InputSync.EngineerNumber = EngineerNumberInput.Text;
-        }
-
-        private void UIElement_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (WorkshopTab.IsSelected)
-            {
-                InputSync.ActiveTab = WorkshopTab;
-            } else if (PartsCageTab.IsSelected)
-            {
-                InputSync.ActiveTab = PartsCageTab;
+            while (EngineerNumber.Length == 3) {
+                var repairs = Kansū.Workshop.RepairsToday(EngineerNumber).ToString();
+                var TimeSpent = Kansū.Workshop.TimeTaken(EngineerNumber).ToString();
+                IndieRepairs.Text = repairs;
+                IndieTimeSpent.Text = TimeSpent;
+                await Task.Delay(10000).ConfigureAwait(true);
             }
         }
-    }
 
-    public static class InputSync
-    {
-        public static string EngineerNumber { get; set; }
-        public static TabItem ActiveTab { get; set; }
+        private async void EngineerNumberInput_OnKeyUp(object sender, KeyEventArgs e)
+        {
+            EngineerNumber = EngineerNumberInput.Text;
+            
+            if (EngineerNumber.Length == 3)
+            {
+                ConfigIcon.Visibility = Visibility.Hidden;
+                IndieStats.Visibility = Visibility.Visible;
+                await indieStats().ConfigureAwait(true);
+            }
+            else
+            {
+                ConfigIcon.Visibility = Visibility.Visible;
+                IndieStats.Visibility = Visibility.Hidden;
+            }
+            
+
+        }
+
+
+        private async void RecentlyIn_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            while (WorkshopTab.IsSelected)
+            {
+                RecentlyInData.ItemsSource = await Task.Run(Kansū.Workshop.RecentlyBookedIn).ConfigureAwait(true);
+                await Task.Delay(10000).ConfigureAwait(true);
+            }
+        }
+
+        private  async void RecentParts_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            while (WorkshopTab.IsSelected)
+            {
+                RecentPartsData.ItemsSource = await Task.Run(Kansū.Workshop.RecentAddedParts).ConfigureAwait(true);
+                await Task.Delay(10000).ConfigureAwait(true);
+            }
+        }
+
+        private async void RecentRepairs_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            while (WorkshopTab.IsSelected)
+            {
+                RecentRepairData.ItemsSource = await Task.Run(Kansū.Workshop.RecentRepairs).ConfigureAwait(true);
+                await Task.Delay(10000).ConfigureAwait(true);
+            }
+        }
+
+
+        private void ConfigTile_OnClick(object sender, RoutedEventArgs e)
+        {
+            ConfigFlyout.IsOpen = true;
+        }
     }
 }
