@@ -54,11 +54,6 @@ namespace Kansū
             database.Dispose();
             return total;
         }
-        public class EngineerStats
-        {
-            public int Repairs { get; set; }
-            public TimeSpan HoursUsed { get; set; }
-        }
 
         public static List<BookedIn> RecentlyBookedIn()
         {

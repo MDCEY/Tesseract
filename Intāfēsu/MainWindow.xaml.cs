@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace Intāfēsu
         private async Task indieStats()
         {
             while (EngineerNumber.Length == 3) {
-                var repairs = Kansū.Workshop.RepairsToday(EngineerNumber).ToString();
+                var repairs = Kansū.Workshop.RepairsToday(EngineerNumber).ToString(CultureInfo.CurrentCulture);
                 var TimeSpent = Kansū.Workshop.TimeTaken(EngineerNumber).ToString();
                 IndieRepairs.Text = repairs;
                 IndieTimeSpent.Text = TimeSpent;
