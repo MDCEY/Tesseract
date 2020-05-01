@@ -1,22 +1,26 @@
 ﻿<Controls:MetroWindow x:Class="Intāfēsu.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        xmlns:local="clr-namespace:Intāfēsu"
-        mc:Ignorable="d"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      mc:Ignorable="d"
         Title="Intāfēsu" Height="450" Width="800"
         SaveWindowPosition="True"
         BorderThickness="0" 
         GlowBrush="Black">
-    <StackPanel>
-
-	    <TabControl>
-            <TabItem Header="Workshop" x:Name="WorkshopTab">
+	<StackPanel>
+			<Controls:MetroAnimatedSingleRowTabControl HorizontalAlignment="Center" SelectionChanged="Selector_OnSelectionChanged">
+				<TabItem x:Name="WorkshopTab" Header="Workshop"/>|
+				<TabItem x:Name="LogisticsTab" Header="Logistics"/>|
+				<TabItem x:Name="PartsCageTab" Header="Parts Cage"/>
+			</Controls:MetroAnimatedSingleRowTabControl>
+			<Frame x:Name="MainFrame" MinHeight="200" BorderBrush="Black" BorderThickness="5"/>
+		</StackPanel>
+	    <!-- <TabControl>
+			<TabItem Header="Workshop" x:Name="WorkshopTab">
 				<StackPanel>
-	            <StackPanel Orientation="Horizontal">
+					<StackPanel Orientation="Horizontal">
 
 						<Controls:Tile  
 				               Width="100"
@@ -24,8 +28,8 @@
 				               x:Name="ConfigTile"
 				               Click="ConfigTile_OnClick">
 							<Grid>
-						<iconPacks:PackIconMaterial Width="90" Height="90" Margin="5" Kind="AccountCog"  VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="ConfigIcon" Visibility="Visible"/>
-						<TextBlock Width="90" Height="90" Margin="5" TextAlignment="Center" x:Name="IndieStats" Visibility="Hidden">
+								<iconPacks:PackIconMaterial Width="90" Height="90" Margin="5" Kind="AccountCog"  VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="ConfigIcon" Visibility="Visible"/>
+								<TextBlock Width="90" Height="90" Margin="5" TextAlignment="Center" x:Name="IndieStats" Visibility="Hidden">
 							<Run Text="Repairs" FontSize="16"></Run>
 							<LineBreak></LineBreak>
 							<Run FontSize="16" x:Name="IndieRepairs"></Run>
@@ -33,10 +37,10 @@
 							<Run Text="Time Spent" FontSize="16"></Run>
 							<LineBreak></LineBreak>
 							<Run FontSize="16" x:Name="IndieTimeSpent"></Run>
-						</TextBlock>
-						</Grid>
+								</TextBlock>
+							</Grid>
 						</Controls:Tile>
-			</StackPanel>
+					</StackPanel>
 					<TabControl>
 						<TabItem Header="Recently Booked In" x:Name="RecentlyIn" MouseLeftButtonUp="RecentlyIn_OnMouseLeftButtonUp">
 							<DataGrid x:Name="RecentlyInData" MaxHeight="240"></DataGrid>
@@ -52,10 +56,9 @@
 
 			</TabItem>
 			<TabItem Header="Parts Cage" x:Name="PartsCageTab"></TabItem>
-	    </TabControl>
-	  
-	</StackPanel>
-	<Controls:MetroWindow.Flyouts>
+			</TabControl> -->
+
+	<!--<Controls:MetroWindow.Flyouts>
 		<Controls:FlyoutsControl>
 			<Controls:Flyout Header="Flyout" Position="Right" Width="200" x:Name="ConfigFlyout">
 				<StackPanel>
@@ -68,5 +71,5 @@
 				</StackPanel>
 			</Controls:Flyout>
 		</Controls:FlyoutsControl>
-	</Controls:MetroWindow.Flyouts>
+	</Controls:MetroWindow.Flyouts>-->
 </Controls:MetroWindow>

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,16 +22,31 @@ namespace Intāfēsu
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow : MetroWindow, INotifyPropertyChanged
     {
-        public string EngineerNumber;
+        // Declare variables
+        private int _repairs;
+        // Declare event
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public MainWindow()
         {
             InitializeComponent();
- }
+            this.DataContext = this;
+        }
 
-        private async Task indieStats()
+        
+
+
+
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+
+
+        /*private async Task indieStats()
         {
             while (EngineerNumber.Length == 3) {
                 var repairs = Kansū.Workshop.RepairsToday(EngineerNumber).ToString(CultureInfo.CurrentCulture);
@@ -91,6 +108,27 @@ namespace Intāfēsu
         private void ConfigTile_OnClick(object sender, RoutedEventArgs e)
         {
             ConfigFlyout.IsOpen = true;
+        }*/
+        private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string myuri = string.Empty;
+            if (WorkshopTab.IsSelected)
+            {
+                myuri = "RecentRepairs.page.xaml";
+            }
+
+            if (LogisticsTab.IsSelected)
+            {
+                myuri = "RecentRepairs.page.xaml";
+            }
+
+            if (PartsCageTab.IsSelected)
+            {
+                myuri = "RecentRepairs.page.xaml";
+            }
+            MainFrame.Source = new Uri(myuri, UriKind.Relative);
         }
     }
+
+
 }
