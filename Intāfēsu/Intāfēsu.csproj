@@ -140,8 +140,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="RecentRepairs.page.xaml.cs">
-      <DependentUpon>RecentRepairs.page.xaml</DependentUpon>
+    <Compile Include="RecentBookins.Page.xaml.cs">
+      <DependentUpon>RecentBookins.Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecentPartsIn.Page.xaml.cs">
+      <DependentUpon>RecentPartsIn.Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecentRepairs.Page.xaml.cs">
+      <DependentUpon>RecentRepairs.Page.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -155,7 +161,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="RecentRepairs.page.xaml">
+    <Page Include="RecentBookins.Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecentPartsIn.Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecentRepairs.Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

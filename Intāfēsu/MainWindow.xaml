@@ -9,14 +9,29 @@
         SaveWindowPosition="True"
         BorderThickness="0" 
         GlowBrush="Black">
-	<StackPanel>
-			<Controls:MetroAnimatedSingleRowTabControl HorizontalAlignment="Center" SelectionChanged="Selector_OnSelectionChanged">
-				<TabItem x:Name="WorkshopTab" Header="Workshop"/>|
-				<TabItem x:Name="LogisticsTab" Header="Logistics"/>|
-				<TabItem x:Name="PartsCageTab" Header="Parts Cage"/>
-			</Controls:MetroAnimatedSingleRowTabControl>
-			<Frame x:Name="MainFrame" MinHeight="200" BorderBrush="Black" BorderThickness="5"/>
-		</StackPanel>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="4*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<ListView Grid.Column="0" x:Name="MainNavigation" BorderThickness="0 0 1 0" Margin="0 0 5 0">
+			<ListViewItem>
+				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" x:Name="RecentRepairsPage" BorderThickness="0" Click="updatePageSource_OnClick">Recent Repairs</Button>
+			</ListViewItem>
+			<ListViewItem>
+				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" x:Name="RecentBookinsPage" BorderThickness="0" Click="updatePageSource_OnClick">Recently Booked In</Button>
+			</ListViewItem>
+			<ListViewItem>
+				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" BorderThickness="0" x:Name="RecentPartsInPage" Click="updatePageSource_OnClick">Recent Parts In</Button>
+			</ListViewItem>
+		</ListView>
+		<Controls:TransitioningContentControl  Grid.Column="1" Transition="Left" >
+			<Controls:MetroContentControl x:Name="FrameTransition">
+				<Frame NavigationUIVisibility="Hidden" x:Name="MainFrame"/>
+			</Controls:MetroContentControl>		
+		</Controls:TransitioningContentControl>
+	</Grid>
+
 	    <!-- <TabControl>
 			<TabItem Header="Workshop" x:Name="WorkshopTab">
 				<StackPanel>
@@ -42,14 +57,8 @@
 						</Controls:Tile>
 					</StackPanel>
 					<TabControl>
-						<TabItem Header="Recently Booked In" x:Name="RecentlyIn" MouseLeftButtonUp="RecentlyIn_OnMouseLeftButtonUp">
-							<DataGrid x:Name="RecentlyInData" MaxHeight="240"></DataGrid>
-						</TabItem>
 						<TabItem Header="RecentParts" x:Name="RecentParts"  MouseLeftButtonUp="RecentParts_OnMouseLeftButtonUp">
 							<DataGrid x:Name="RecentPartsData" MaxHeight="240"></DataGrid>
-						</TabItem>
-						<TabItem Header="Recent Repairs" x:Name="RecentRepairs" MouseLeftButtonUp="RecentRepairs_OnMouseLeftButtonUp">
-							<DataGrid x:Name="RecentRepairData" MaxHeight="240"></DataGrid>
 						</TabItem>
 					</TabControl>
 				</StackPanel>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -22,28 +23,36 @@ namespace Intāfēsu
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow, INotifyPropertyChanged
+    public partial class MainWindow : MetroWindow
     {
-        // Declare variables
-        private int _repairs;
-        // Declare event
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = this;
         }
 
-        
-
-
-
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        public void updatePageSource_OnClick(object sender, RoutedEventArgs e)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
+            // Convert RoutedEventArgs to a button
+            Button buttonSrc = e.Source as Button;
+            // Retrieve element name
+            var buttonName = buttonSrc.Name;
 
+            String[] seperator = {"Page"};
+            // Split the buttonName to parse the matching page name.
+            var pageName = buttonName.Split(seperator,2,StringSplitOptions.RemoveEmptyEntries);
+            // Update the frame to the relevant page
+            MainFrame.Source = new Uri(pageName[0] + ".Page.xaml", UriKind.Relative);
+           
+            // set active buttons to disabled
+            foreach (var b in MainNavigation.FindChildren<Button>())
+            {
+                b.IsEnabled = b != buttonSrc;
+            }
+            // trigger page transition
+            FrameTransition.Reload();
+
+        }
 
 
         /*private async Task indieStats()
@@ -77,15 +86,6 @@ namespace Intāfēsu
         }
 
 
-        private async void RecentlyIn_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            while (WorkshopTab.IsSelected)
-            {
-                RecentlyInData.ItemsSource = await Task.Run(Kansū.Workshop.RecentlyBookedIn).ConfigureAwait(true);
-                await Task.Delay(10000).ConfigureAwait(true);
-            }
-        }
-
         private  async void RecentParts_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             while (WorkshopTab.IsSelected)
@@ -109,25 +109,6 @@ namespace Intāfēsu
         {
             ConfigFlyout.IsOpen = true;
         }*/
-        private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string myuri = string.Empty;
-            if (WorkshopTab.IsSelected)
-            {
-                myuri = "RecentRepairs.page.xaml";
-            }
-
-            if (LogisticsTab.IsSelected)
-            {
-                myuri = "RecentRepairs.page.xaml";
-            }
-
-            if (PartsCageTab.IsSelected)
-            {
-                myuri = "RecentRepairs.page.xaml";
-            }
-            MainFrame.Source = new Uri(myuri, UriKind.Relative);
-        }
     }
 
 
