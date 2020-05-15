@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using MahApps.Metro.Controls;
@@ -16,16 +16,17 @@ namespace Intāfēsu
             this.DataContext = this;
         }
 
-        public void updatePageSource_OnClick(object sender, RoutedEventArgs e)
+        public void updatePageSourceOnClick(object sender, RoutedEventArgs e)
         {
             // Convert RoutedEventArgs to a button
-            Button buttonSrc = e.Source as Button;
+            if (e == null) return;
             // Retrieve element name
+            if (!(e.Source is Button buttonSrc)) return;
             var buttonName = buttonSrc.Name;
 
-            String[] seperator = {"Page"};
+            string[] separator = {"Page"};
             // Split the buttonName to parse the matching page name.
-            var pageName = buttonName.Split(seperator,2,StringSplitOptions.RemoveEmptyEntries);
+            var pageName = buttonName.Split(separator,2,StringSplitOptions.RemoveEmptyEntries);
             // Update the frame to the relevant page
             MainFrame.Source = new Uri(pageName[0] + ".Page.xaml", UriKind.Relative);
            
@@ -36,6 +37,8 @@ namespace Intāfēsu
             }
             // trigger page transition
             FrameTransition.Reload();
+
+
 
         }
 
