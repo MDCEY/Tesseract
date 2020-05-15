@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +11,8 @@ namespace Intāfēsu
     /// </summary>
     public partial class RecentBookins : Page
     {
+        internal List<Workshop.BookedIn> CurrentData { get; set; }
+        internal List<Workshop.BookedIn> Update { get; set; }
         public RecentBookins()
         {
             InitializeComponent();
@@ -20,8 +22,12 @@ namespace Intāfēsu
         {
             do
             {
-                RecentBookinData.ItemsSource = await Task.Run(Kansū.Workshop.RecentlyBookedIn).ConfigureAwait(true);
+                CurrentData = (List<Workshop.BookedIn>) RecentBookinData.ItemsSource;
+                Update = await Task.Run(Workshop.RecentlyBookedIn).ConfigureAwait(true);
+                if (CurrentData != null) RecentBookinData.ItemsSource = Update;
+                else if (Update != CurrentData) RecentBookinData.ItemsSource = Update;
                 await Task.Delay(10000).ConfigureAwait(true);
+
             } while (RecentBookinData.IsVisible);
         }
     }

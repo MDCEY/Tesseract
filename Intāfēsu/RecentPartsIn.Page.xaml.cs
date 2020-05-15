@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +11,8 @@ namespace Intāfēsu
     /// </summary>
     public partial class RecentPartsIn : Page
     {
+        internal List<Workshop.PartsAdded> CurrentData { get; set; }
+        internal List<Workshop.PartsAdded> Update { get; set; }
         public RecentPartsIn()
         {
             InitializeComponent();
@@ -20,8 +22,12 @@ namespace Intāfēsu
         {
             do
             {
-                RecentPartsInData.ItemsSource = await Task.Run(Kansū.Workshop.RecentAddedParts).ConfigureAwait(true);
+                CurrentData = (List<Workshop.PartsAdded>) RecentPartsInData.ItemsSource;
+                Update = await Task.Run(Workshop.RecentAddedParts).ConfigureAwait(true);
+                if (CurrentData != null) RecentPartsInData.ItemsSource = Update;
+                else if (CurrentData != Update) RecentPartsInData.ItemsSource = Update;
                 await Task.Delay(10000).ConfigureAwait(true);
+                
             } while (RecentPartsInData.IsVisible);
         }
     }
