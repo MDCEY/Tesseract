@@ -54,11 +54,6 @@ namespace Kansū
             database.Dispose();
             return total;
         }
-        public class EngineerStats
-        {
-            public int Repairs { get; set; }
-            public TimeSpan HoursUsed { get; set; }
-        }
 
         public static List<BookedIn> RecentlyBookedIn()
         {
@@ -98,7 +93,7 @@ namespace Kansū
             public DateTime MostRecent { get; set; }
         }
 
-        public static IEnumerable<PartsAdded> RecentAddedParts()
+        public static List<PartsAdded> RecentAddedParts()
         {
             const string query = "SELECT Audit_Move_Date, " +
                                  "Audit_Part_Num, " +
@@ -135,7 +130,7 @@ namespace Kansū
             }
             database.Dispose();
             reader.Dispose();
-            return rows.DistinctBy(i => i.PartNumber);
+            return rows.DistinctBy(i => i.PartNumber).ToList();
         }
         public class PartsAdded
         {

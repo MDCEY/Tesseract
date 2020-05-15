@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using MahApps.Metro.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Intāfēsu
 {
@@ -21,17 +10,43 @@ namespace Intāfēsu
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        public string EngineerNumber;
-
         public MainWindow()
         {
             InitializeComponent();
- }
+            this.DataContext = this;
+        }
 
-        private async Task indieStats()
+        public void updatePageSourceOnClick(object sender, RoutedEventArgs e)
+        {
+            // Convert RoutedEventArgs to a button
+            if (e == null) return;
+            // Retrieve element name
+            if (!(e.Source is Button buttonSrc)) return;
+            var buttonName = buttonSrc.Name;
+
+            string[] separator = {"Page"};
+            // Split the buttonName to parse the matching page name.
+            var pageName = buttonName.Split(separator,2,StringSplitOptions.RemoveEmptyEntries);
+            // Update the frame to the relevant page
+            MainFrame.Source = new Uri(pageName[0] + ".Page.xaml", UriKind.Relative);
+           
+            // set active buttons to disabled
+            foreach (var b in MainNavigation.FindChildren<Button>())
+            {
+                b.IsEnabled = b != buttonSrc;
+            }
+            // trigger page transition
+            FrameTransition.Reload();
+
+
+
+        }
+
+
+        /*private async Task indieStats()
         {
             while (EngineerNumber.Length == 3) {
-                var repairs = Kansū.Workshop.RepairsToday(EngineerNumber).ToString();
+                var repairs = Kansū.Workshop.RepairsToday(EngineerNumber).ToString(CultureInfo.CurrentCulture);
                 var TimeSpent = Kansū.Workshop.TimeTaken(EngineerNumber).ToString();
                 IndieRepairs.Text = repairs;
                 IndieTimeSpent.Text = TimeSpent;
@@ -59,15 +74,6 @@ namespace Intāfēsu
         }
 
 
-        private async void RecentlyIn_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            while (WorkshopTab.IsSelected)
-            {
-                RecentlyInData.ItemsSource = await Task.Run(Kansū.Workshop.RecentlyBookedIn).ConfigureAwait(true);
-                await Task.Delay(10000).ConfigureAwait(true);
-            }
-        }
-
         private  async void RecentParts_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             while (WorkshopTab.IsSelected)
@@ -90,6 +96,8 @@ namespace Intāfēsu
         private void ConfigTile_OnClick(object sender, RoutedEventArgs e)
         {
             ConfigFlyout.IsOpen = true;
-        }
+        }*/
     }
+
+
 }

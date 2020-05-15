@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\kieran.wynne\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\kieran.wynne\.Rider2019.3\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\kieran.wynne\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\kieran.wynne\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Tesseract.1915009914.00" t="ExcludeRecursive" />
+    <e p="C:\Users\kieran.wynne\Programs\JetBrains\Rider.Appdata\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\kieran.wynne\Programs\JetBrains\Rider.Appdata\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\kieran.wynne\Programs\JetBrains\Rider.Appdata\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\kieran.wynne\Programs\JetBrains\Rider.Appdata\system\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Tesseract.1915009914.00" t="ExcludeRecursive" />
     <e p="C:\Users\kieran.wynne\Projects\Tesseract" t="IncludeFlat">
-      <e p="callUnrepairGui" t="IncludeRecursive">
+      <e p="Intāfēsu" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="App.xaml" t="Include" />
         <e p="App.xaml.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="callUnrepairGui.csproj" t="IncludeRecursive" />
+        <e p="Intāfēsu.csproj" t="IncludeRecursive" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Release" t="Include">
             <e p="App.g.cs" t="Include" />
             <e p="MainWindow.g.cs" t="Include" />
+            <e p="RecentBookins.Page.g.cs" t="Include" />
+            <e p="RecentPartsIn.Page.g.cs" t="Include" />
+            <e p="RecentRepairs.page.g.cs" t="Include" />
           </e>
         </e>
+        <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
           <e p="Resources.Designer.cs" t="Include" />
@@ -27,37 +31,12 @@
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
         </e>
-      </e>
-      <e p="Cli" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Cli.csproj" t="IncludeRecursive" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="packages.config" t="Include" />
-        <e p="Program.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-      </e>
-      <e p="Gui" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="App.xaml" t="Include" />
-        <e p="App.xaml.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Gui.csproj" t="IncludeRecursive" />
-        <e p="MainWindow.xaml" t="Include" />
-        <e p="MainWindow.xaml.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
-            <e p="App.g.cs" t="Include" />
-            <e p="MainWindow.g.cs" t="Include" />
-          </e>
-        </e>
-        <e p="packages.config" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-          <e p="Resources.Designer.cs" t="Include" />
-          <e p="Resources.resx" t="Include" />
-        </e>
+        <e p="RecentBookins.Page.xaml" t="Include" />
+        <e p="RecentBookins.Page.xaml.cs" t="Include" />
+        <e p="RecentPartsIn.Page.xaml" t="Include" />
+        <e p="RecentPartsIn.Page.xaml.cs" t="Include" />
+        <e p="RecentRepairs.page.xaml" t="Include" />
+        <e p="RecentRepairs.page.xaml.cs" t="Include" />
       </e>
       <e p="Kansū" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -73,109 +52,8 @@
         </e>
         <e p="Workshop.cs" t="Include" />
       </e>
-      <e p="Kurikku" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="App.xaml" t="Include" />
-        <e p="App.xaml.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Kurikku.csproj" t="IncludeRecursive" />
-        <e p="MainWindow.xaml" t="Include" />
-        <e p="MainWindow.xaml.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="packages.config" t="Include" />
-        <e p="PartsCage.Movements.xaml" t="Include" />
-        <e p="PartsCage.Movements.xaml.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-          <e p="Resources.Designer.cs" t="Include" />
-          <e p="Resources.resx" t="Include" />
-          <e p="Settings.Designer.cs" t="Include" />
-          <e p="Settings.settings" t="Include" />
-        </e>
-        <e p="resources" t="Include">
-          <e p="Roboto-Black.ttf" t="Include" />
-          <e p="Roboto-Regular.ttf" t="Include" />
-          <e p="Roboto-Thin.ttf" t="Include" />
-        </e>
-        <e p="Workshop.xaml" t="Include" />
-        <e p="Workshop.xaml.cs" t="Include" />
-      </e>
-      <e p="LogisticGui" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="App.xaml" t="Include" />
-        <e p="App.xaml.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="LogisticGui.csproj" t="IncludeRecursive" />
-        <e p="MainWindow.xaml" t="Include" />
-        <e p="MainWindow.xaml.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
-            <e p="App.g.cs" t="Include" />
-            <e p="MainWindow.g.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-          <e p="Resources.Designer.cs" t="Include" />
-          <e p="Resources.resx" t="Include" />
-          <e p="Settings.Designer.cs" t="Include" />
-          <e p="Settings.settings" t="Include" />
-        </e>
-      </e>
-      <e p="Logistics" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
-        <e p="Logistics.csproj" t="IncludeRecursive" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-      </e>
-      <e p="packages" t="ExcludeRecursive">
-        <e p="MSTest.TestAdapter.1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
-        <e p="MSTest.TestAdapter.1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
-        <e p="MSTest.TestAdapter.1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
-      </e>
+      <e p="packages" t="ExcludeRecursive" />
       <e p="Tesseract.sln" t="IncludeFlat" />
-      <e p="UnitTests" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="packages.config" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-        <e p="UnitTest1.cs" t="Include" />
-        <e p="UnitTests.csproj" t="IncludeRecursive" />
-      </e>
-      <e p="Workshop" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-        <e p="Workshop.csproj" t="IncludeRecursive" />
-      </e>
-      <e p="wrapMe" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="App.xaml" t="Include" />
-        <e p="App.xaml.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="MainWindow.xaml" t="Include" />
-        <e p="MainWindow.xaml.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
-            <e p="App.g.cs" t="Include" />
-            <e p="MainWindow.g.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-          <e p="Resources.Designer.cs" t="Include" />
-          <e p="Resources.resx" t="Include" />
-        </e>
-        <e p="wrapMe.csproj" t="IncludeRecursive" />
-      </e>
     </e>
   </component>
 </project>
