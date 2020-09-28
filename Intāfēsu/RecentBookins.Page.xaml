@@ -8,8 +8,22 @@
       Title="RecentBookins"
       Loaded="RecentBookins_OnLoaded">
 
-	<DockPanel>
-		<TextBlock DockPanel.Dock="Top" Text="Recently Booked In"></TextBlock>
-		<DataGrid x:Name="RecentBookinData" IsReadOnly="True" DockPanel.Dock="Bottom" MinHeight="200"></DataGrid>
-	</DockPanel>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="3*"/>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="1.2*"/>
+			</Grid.RowDefinitions>
+			
+			<DockPanel >
+				<TextBlock DockPanel.Dock="Top" Text="Recently Booked In"></TextBlock>
+				<DataGrid x:Name="RecentBookinData" IsReadOnly="True" DockPanel.Dock="Bottom" MinHeight="200"/>
+			</DockPanel>
+			<DataGrid Grid.Row="1" x:Name="BookinByUserData" IsReadOnly="True" MinHeight="6" />
+			<StackPanel Grid.Row="2" Margin="5 0">
+				<Label>Call Number</Label>
+				<TextBox x:Name="callNumber"/>
+				<Button Click="ButtonBase_OnClick">Print Product</Button>
+			</StackPanel>
+		</Grid>
 </Page>

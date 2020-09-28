@@ -183,6 +183,62 @@ namespace Kansū
         }
     }
 
+    public static class Logistics
+    {
+        public static List<BookinBreakdown> FetchBookInBreakdown()
+        {
+            const string query = "Select Employ_Name, Count(Call_Num) FROM COOPESOLBRANCHLIVE.dbo.SCCall INNER JOIN COOPESOLBRANCHLIVE.dbo.SCEMPLOY On Call_User = Employ_Num WHERE Call_InDate between Convert(DateTime, DATEDIFF(DAY, 0, GETDATE())) and Dateadd(day, 1, DATEDIFF(DAY, 0, GETDATE())) and Call_CalT_Code='ZR1' GROUP BY Employ_Name";
+            var database = new Database();
+            var connection = database.Connection;
+            database.CreateCommand(query);
+            var command = database.Command;
+            var reader = command.ExecuteReader();
+            var rows = new List<BookinBreakdown>();
+            while (reader.Read())
+            {
+                BookinBreakdown row = new BookinBreakdown
+                {
+                    User = reader.GetString(0),
+                    Total = reader.GetInt32(1),
+                };
+                rows.Add(row);
+            }
+            database.Dispose();
+            reader.Dispose();
+            return rows;
+        }
+
+        public class BookinBreakdown
+        {
+            public string User { get; set; }
+            public int Total { get; set; }
+        }
+
+        public class CallDetails
+        {
+            public string Product { get; set; }
+            public string Description { get; set; }
+            public CallDetails(string value)
+            {
+                const string query = "Select Prod_Num, Prod_Desc  FROM COOPESOLBRANCHLIVE.dbo.SCProd INNER JOIN COOPESOLBRANCHLIVE.dbo.SCCALL On Call_Prod_Num = Prod_Num WHERE Call_Num = @value";
+                var database = new Database();
+                var connection = database.Connection;
+                database.CreateCommand(query);
+                var command = database.Command;
+                command.Parameters.AddWithValue("@value", value);
+
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product = reader.GetString(0);
+                    Description = reader.GetString(1);
+                }
+                database.Dispose();
+                reader.Dispose();
+            }
+        }
+    }
+    
     public static class PartsCage
     {
         public static List<MovedPart> EngineerParts()

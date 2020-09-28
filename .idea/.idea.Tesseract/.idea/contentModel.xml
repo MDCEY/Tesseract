@@ -4,8 +4,9 @@
     <e p="C:\Users\kieran.wynne\Programs\JetBrains\Rider.Appdata\config\consoles\db" t="IncludeRecursive" />
     <e p="C:\Users\kieran.wynne\Programs\JetBrains\Rider.Appdata\config\extensions" t="IncludeRecursive" />
     <e p="C:\Users\kieran.wynne\Programs\JetBrains\Rider.Appdata\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\kieran.wynne\Programs\JetBrains\Rider.Appdata\system\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Tesseract.1915009914.00" t="ExcludeRecursive" />
+    <e p="C:\Users\kieran.wynne\Programs\JetBrains\Rider.Appdata\system\resharper-host\local\Transient\Rider\v202\SolutionCaches\_Tesseract.1915009914.00" t="ExcludeRecursive" />
     <e p="C:\Users\kieran.wynne\Projects\Tesseract" t="IncludeFlat">
+      <e p=".git\info\exclude" t="IncludeRecursive" />
       <e p="Intāfēsu" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="App.xaml" t="Include" />
@@ -37,6 +38,9 @@
         <e p="RecentPartsIn.Page.xaml.cs" t="Include" />
         <e p="RecentRepairs.page.xaml" t="Include" />
         <e p="RecentRepairs.page.xaml.cs" t="Include" />
+        <e p="Resources" t="Include">
+          <e p="ProductInfo.label" t="Include" />
+        </e>
       </e>
       <e p="Kansū" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
