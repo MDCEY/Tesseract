@@ -28,7 +28,7 @@ namespace Intāfēsu
             // Split the buttonName to parse the matching page name.
             var pageName = buttonName.Split(separator,2,StringSplitOptions.RemoveEmptyEntries);
             // Update the frame to the relevant page
-            MainFrame.Source = new Uri(pageName[0] + ".Page.xaml", UriKind.Relative);
+            MainFrame.Source = new Uri("Pages/" + pageName[0] + ".Page.xaml", UriKind.Relative);
            
             // set active buttons to disabled
             foreach (var b in MainNavigation.FindChildren<Button>())
