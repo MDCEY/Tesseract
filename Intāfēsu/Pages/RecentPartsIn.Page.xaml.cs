@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using Kansū;
 
 namespace Intāfēsu
 {
@@ -11,8 +10,8 @@ namespace Intāfēsu
     /// </summary>
     public partial class RecentPartsIn : Page
     {
-        internal List<Workshop.PartsAdded> CurrentData { get; set; }
-        internal List<Workshop.PartsAdded> Update { get; set; }
+        internal List<RecentAddedParts.PartsAdded> CurrentData { get; set; }
+        internal List<RecentAddedParts.PartsAdded> Update { get; set; }
         public RecentPartsIn()
         {
             InitializeComponent();
@@ -22,8 +21,8 @@ namespace Intāfēsu
         {
             do
             {
-                CurrentData = (List<Workshop.PartsAdded>) RecentPartsInData.ItemsSource;
-                Update = await Task.Run(Workshop.RecentAddedParts).ConfigureAwait(true);
+                CurrentData = (List<RecentAddedParts.PartsAdded>) RecentPartsInData.ItemsSource;
+                Update = (List<RecentAddedParts.PartsAdded>) await Task.Run(()=> new RecentAddedParts().Result).ConfigureAwait(true);
                 if (CurrentData != null) RecentPartsInData.ItemsSource = Update;
                 else if (CurrentData != Update) RecentPartsInData.ItemsSource = Update;
                 await Task.Delay(10000).ConfigureAwait(true);

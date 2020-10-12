@@ -1,0 +1,1 @@
+Select Employ_Name, Count(Call_Num) FROM COOPESOLBRANCHLIVE.dbo.SCCall INNER JOIN COOPESOLBRANCHLIVE.dbo.SCEMPLOY On Call_User = Employ_Num WHERE Call_InDate between Convert(DateTime, DATEDIFF(DAY, 0, GETDATE())) and Dateadd(day, 1, DATEDIFF(DAY, 0, GETDATE())) and Call_CalT_Code='ZR1' GROUP BY Employ_Name
