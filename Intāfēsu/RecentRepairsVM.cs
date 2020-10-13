@@ -20,7 +20,6 @@ namespace Intāfēsu
 
     public class RecentRepairsViewModel : ViewModelBase
     {
-
         private Repair _repair;
         private ObservableCollection<Repair> _repairs;
 
@@ -46,6 +45,11 @@ namespace Intāfēsu
 
         public RecentRepairsViewModel()
         {
+            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 10);
+            dispatcherTimer.Start();
+
             Repair = new Repair();
             Repairs = new ObservableCollection<Repair>();
             Repairs.CollectionChanged += new NotifyCollectionChangedEventHandler(Repairs_CollectionChanged);
@@ -62,18 +66,27 @@ namespace Intāfēsu
             var _ = Convert.FromBase64String(Properties.Resources.ConnectionString);
             var Connection = new SqlConnection(Encoding.UTF8.GetString(_));
             var Update = Connection.Query<Repair>(TesseractDb.Queries.RecentRepairs).ToList();
-            if (Repairs.Any())
+
+            foreach (Repair updateRepair in Update)
             {
-                Repairs = Repairs.Concat(Update) as ObservableCollection<Repair>;
-            }
-            else
-            {
-                foreach (var r in Update)
+                if (Repairs.Any(x => x.SerialNumber == updateRepair.SerialNumber))
                 {
-                    Repairs.Add(r);
+                    continue;
+                }
+                else
+                {
+                    Repairs.Add(updateRepair);
                 }
             }
+
+            //var recordDiff =  Update.Count - Repairs.Count;
+            //foreach (var r in Update.GetRange(0, recordDiff))
+            //{
+            //    Repairs.Add(r);
+            //}
+
         }
+
         public  void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             Update();

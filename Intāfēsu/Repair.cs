@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace Intāfēsu
 {
@@ -8,5 +10,7 @@ namespace Intāfēsu
         public string EngineerNumber { get; set; }
         public string ProductDescription { get; set; }
         public string SerialNumber { get; set; }
+
+
     }
 }
