@@ -9,7 +9,7 @@
       Title="RecentRepairs"
       >
 		<Page.Resources>
-			<local:RecentRepairsViewModel x:Key="RecentRepairsViewModel"/>
+			<local:ViewModelRecentRepairs x:Key="RecentRepairsViewModel"/>
 		</Page.Resources>
 	<Grid DataContext="{Binding Source={StaticResource RecentRepairsViewModel}}">
 		<DockPanel>

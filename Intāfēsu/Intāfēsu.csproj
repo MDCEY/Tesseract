@@ -202,7 +202,7 @@
     <Compile Include="RecentAddedParts.cs" />
     <Compile Include="RecentBookins.cs" />
     <Compile Include="RecentlyMovedToBenchKits.cs" />
-    <Compile Include="RecentRepairsVM.cs" />
+    <Compile Include="ViewModelRecentRepairs.cs" />
     <Compile Include="Repair.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="TesseractDB.cs" />

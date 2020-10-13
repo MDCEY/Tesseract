@@ -18,7 +18,7 @@ using Dapper;
 namespace Intāfēsu
 {
 
-    public class RecentRepairsViewModel : ViewModelBase
+    public class ViewModelRecentRepairs : ViewModelBase
     {
         private Repair _repair;
         private ObservableCollection<Repair> _repairs;
@@ -43,7 +43,7 @@ namespace Intāfēsu
             }
         }
 
-        public RecentRepairsViewModel()
+        public ViewModelRecentRepairs()
         {
             System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
