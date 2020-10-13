@@ -1,0 +1,1 @@
+Select Prod_Num, Prod_Desc  FROM COOPESOLBRANCHLIVE.dbo.SCProd INNER JOIN COOPESOLBRANCHLIVE.dbo.SCCALL On Call_Prod_Num = Prod_Num WHERE Call_Num = @value
