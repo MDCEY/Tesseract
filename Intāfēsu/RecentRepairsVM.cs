@@ -79,12 +79,6 @@ namespace Intāfēsu
                 }
             }
 
-            //var recordDiff =  Update.Count - Repairs.Count;
-            //foreach (var r in Update.GetRange(0, recordDiff))
-            //{
-            //    Repairs.Add(r);
-            //}
-
         }
 
         public  void dispatcherTimer_Tick(object sender, EventArgs e)

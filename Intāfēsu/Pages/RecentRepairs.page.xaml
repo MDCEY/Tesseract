@@ -15,7 +15,7 @@
 		<DockPanel>
 			<DataGrid  x:Name="RecentRepairData" IsReadOnly="True" DockPanel.Dock="Bottom" MinHeight="200" AutoGenerateColumns="False" ItemsSource="{Binding Repairs}" >
 				<DataGrid.Columns>
-					<DataGridTextColumn Header="Completed At" Binding="{Binding DateAdded}"/>
+					<DataGridTextColumn Header="Completed At" Binding="{Binding DateAdded}" SortDirection="Descending"/>
 					<DataGridTextColumn Header="Engineer" Binding="{Binding EngineerNumber}"/>
 					<DataGridTextColumn Header="Serial Number" Binding="{Binding SerialNumber}"/>
 					<DataGridTextColumn Header="Description" Binding="{Binding ProductDescription}"/>
