@@ -20,34 +20,10 @@ namespace Intāfēsu
     public partial class RecentBookins : Page
     {
 
-        internal List<dynamic> CurrentData = new List<dynamic>();
         public RecentBookins()
         {
             InitializeComponent();
-            this.DataContext = this;
         }
-
-
-
-private async void RecentBookins_OnLoaded(object sender, RoutedEventArgs e)
-{
-    
-            do
-            {
-                var update = await Task.Run(() => new RecentBookinsLogic().Result);
-                if (CurrentData.Count > 1)
-                {
-                    CurrentData.Union(update);
-                }
-                else
-                {
-                    CurrentData = (List<dynamic>)update;
-                }
-                RecentBookedInData.ItemsSource = CurrentData;
-                await Task.Delay(10000).ConfigureAwait(true);
-
-            } while (RecentBookedInData.IsVisible);
-        }
-
     }
+
 }

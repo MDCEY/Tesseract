@@ -6,21 +6,20 @@
       xmlns:local="clr-namespace:Intāfēsu" x:Class="Intāfēsu.RecentBookins" 
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="RecentBookins"
-      Loaded="RecentBookins_OnLoaded">
+      Title="RecentBookins">
+	<Page.Resources>
+		<local:ViewModelRecentBookins x:Key="ViewModelRecentBookins"/>
+	</Page.Resources>
+	<Grid DataContext="{Binding Source={StaticResource ViewModelRecentBookins}}">
 
-	<Grid>
-		<Grid.DataContext>
-			<local:RecentBookinsLogic/>
-		</Grid.DataContext>
 
-		<DockPanel >
+		<DockPanel>
 			<TextBlock DockPanel.Dock="Top" Text="Recently Booked In"/>
-			<DataGrid ItemsSource="{Binding Mode=OneWay}"  x:Name="RecentBookedInData" DockPanel.Dock="Bottom" AutoGenerateColumns="false">
+			<DataGrid ItemsSource="{Binding BookedInParts}"  DockPanel.Dock="Bottom" AutoGenerateColumns="false">
 				<DataGrid.Columns>
-					<DataGridTextColumn Header="Total" Binding="{Binding Total}"/>
-					<DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
-					<DataGridTextColumn Header="Last In" Binding="{Binding LastIn}"/>
+					<DataGridTextColumn Header="Total" Binding="{Binding Total }"/>
+					<DataGridTextColumn Header="Description" Binding="{Binding PartDescription}"/>
+					<DataGridTextColumn Header="Last In" Binding="{Binding LastBookedIn}"/>
 				</DataGrid.Columns>
 			</DataGrid>
 		</DockPanel>

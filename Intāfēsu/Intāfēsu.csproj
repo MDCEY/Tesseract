@@ -183,6 +183,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BookedInBreakdown.cs" />
+    <Compile Include="BookedInPart.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Pages\RecentBookins.Page.xaml.cs">
       <DependentUpon>RecentBookins.Page.xaml</DependentUpon>
@@ -206,6 +207,7 @@
     <Compile Include="RelayCommand.cs" />
     <Compile Include="TesseractDB.cs" />
     <Compile Include="ViewModelBase.cs" />
+    <Compile Include="ViewModelRecentBookins.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
