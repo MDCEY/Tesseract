@@ -2,6 +2,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       xmlns:local="clr-namespace:Intāfēsu"
       x:Class="Intāfēsu.RecentRepairs" 
       mc:Ignorable="d" 
@@ -12,15 +13,25 @@
 			<local:ViewModelRecentRepairs x:Key="RecentRepairsViewModel"/>
 		</Page.Resources>
 	<Grid DataContext="{Binding Source={StaticResource RecentRepairsViewModel}}">
-		<DockPanel>
-			<DataGrid  x:Name="RecentRepairData" IsReadOnly="True" DockPanel.Dock="Bottom" MinHeight="200" AutoGenerateColumns="False" ItemsSource="{Binding Repairs}" >
-				<DataGrid.Columns>
-					<DataGridTextColumn Header="Completed At" Binding="{Binding DateAdded}" SortDirection="Descending"/>
-					<DataGridTextColumn Header="Engineer" Binding="{Binding EngineerNumber}"/>
-					<DataGridTextColumn Header="Serial Number" Binding="{Binding SerialNumber}"/>
-					<DataGridTextColumn Header="Description" Binding="{Binding ProductDescription}"/>
-				</DataGrid.Columns>
-			</DataGrid>
-		</DockPanel>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="2*"/>
+		</Grid.RowDefinitions>
+		<DataGrid  x:Name="RecentRepairData" IsReadOnly="True" MinHeight="200" AutoGenerateColumns="False" ItemsSource="{Binding Repairs}" >
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Completed At" Binding="{Binding DateAdded}" SortDirection="Descending"/>
+				<DataGridTextColumn Header="Engineer" Binding="{Binding EngineerNumber}"/>
+				<DataGridTextColumn Header="Serial Number" Binding="{Binding SerialNumber}"/>
+				<DataGridTextColumn Header="Description" Binding="{Binding ProductDescription}"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		<lvc:CartesianChart Grid.Row="1" Series="{Binding RepairBreakDown}"  LegendLocation="Top">
+			<lvc:CartesianChart.AxisY>
+				<lvc:Axis Title="Repairs" MinValue="0"></lvc:Axis>
+			</lvc:CartesianChart.AxisY>
+			<lvc:CartesianChart.AxisX>
+				<lvc:Axis Title="Engineer"></lvc:Axis>
+			</lvc:CartesianChart.AxisX>
+		</lvc:CartesianChart>
 	</Grid>
 </Page>
