@@ -190,6 +190,7 @@
     </ApplicationDefinition>
     <Compile Include="BookedInBreakdown.cs" />
     <Compile Include="BookedInPart.cs" />
+    <Compile Include="CommandHandler.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Pages\RecentBookins.Page.xaml.cs">
       <DependentUpon>RecentBookins.Page.xaml</DependentUpon>
@@ -200,6 +201,10 @@
     <Compile Include="Pages\RecentRepairs.Page.xaml.cs">
       <DependentUpon>RecentRepairs.Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SerialMonitor.Page.xaml.cs">
+      <DependentUpon>SerialMonitor.Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartIn.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -208,12 +213,14 @@
     <Compile Include="RecentAddedParts.cs" />
     <Compile Include="RecentBookins.cs" />
     <Compile Include="RecentlyMovedToBenchKits.cs" />
+    <Compile Include="ViewModelRecentPartsIn.cs" />
     <Compile Include="ViewModelRecentRepairs.cs" />
     <Compile Include="Repair.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="TesseractDB.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Compile Include="ViewModelRecentBookins.cs" />
+    <Compile Include="ViewModelSerialMonitor.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -235,6 +242,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\RecentRepairs.Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SerialMonitor.Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -324,5 +335,8 @@
     <EmbeddedResource Include="Resources\BookedInBreakDown.sql" />
     <EmbeddedResource Include="Resources\RecentlyAddedParts.sql" />
     <EmbeddedResource Include="Resources\RecentRepairs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\SerialMonitor.sql" />
   </ItemGroup>
 </Project>

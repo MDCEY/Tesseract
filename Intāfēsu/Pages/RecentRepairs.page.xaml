@@ -11,7 +11,27 @@
       >
 		<Page.Resources>
 			<local:ViewModelRecentRepairs x:Key="RecentRepairsViewModel"/>
-		</Page.Resources>
+			<lvc:ColorsCollection x:Key="ColorsCollection">
+				<Color A="255" R="0" G="101" B="164"/>
+				<Color A="255" R="82" G="35" B="127"/>
+				<Color A="255" R="196" G="18" B="48"/>
+				<Color A="255" R="232" G="148" B="25"/>
+				<Color A="255" R="0" G="118" B="121"/>
+				<Color A="255" R="116" G="27" B="115"/>
+				<Color A="255" R="0" G="123" B="175"/>
+				<Color A="255" R="185" G="89" B="21"/>
+				<Color A="255" R="253" G="185" B="36"/>
+				<Color A="255" R="0" G="156" B="154"/>
+				<Color A="255" R="181" G="12" B="109"/>
+				<Color A="255" R="0" G="157" B="1"/>
+				<Color A="255" R="245" G="128" B="37"/>
+				<Color A="255" R="253" G="215" B="86"/>
+				<Color A="255" R="96" G="197" B="186"/>
+				<Color A="255" R="230" G="137" B="179"/>
+				<Color A="255" R="113" G="207" B="235"/>
+				<Color A="255" R="254" G="170" B="97"/>
+			</lvc:ColorsCollection>
+	</Page.Resources>
 	<Grid DataContext="{Binding Source={StaticResource RecentRepairsViewModel}}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*"/>
@@ -25,7 +45,7 @@
 				<DataGridTextColumn Header="Description" Binding="{Binding ProductDescription}"/>
 			</DataGrid.Columns>
 		</DataGrid>
-		<lvc:CartesianChart Grid.Row="1" Series="{Binding RepairBreakDown}"  LegendLocation="Top">
+		<lvc:CartesianChart Grid.Row="1" SeriesColors="{StaticResource ColorsCollection}" Series="{Binding RepairBreakDown}"  LegendLocation="Top">
 			<lvc:CartesianChart.AxisY>
 				<lvc:Axis Title="Repairs" MinValue="0"></lvc:Axis>
 			</lvc:CartesianChart.AxisY>

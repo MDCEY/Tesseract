@@ -5,30 +5,36 @@ namespace Intāfēsu
 {
     public class RelayCommand : ICommand
     {
-        public RelayCommand(Action<object> execute) : this(execute, null)
+        Action<object> _execteMethod;
+        Func<object, bool> _canexecuteMethod;
+
+        public RelayCommand(Action<object> execteMethod, Func<object, bool> canexecuteMethod)
         {
+            _execteMethod = execteMethod;
+            _canexecuteMethod = canexecuteMethod;
         }
-        public RelayCommand(Action<object> execute, Predicate<object> canExecute)
-        {
-            if (execute == null)
-                throw new ArgumentNullException("execute");
-            _execute = execute;
-            _canExecute = canExecute;
-        }
+
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null ? true : _canExecute(parameter);
+            if (_canexecuteMethod != null)
+            {
+                return _canexecuteMethod(parameter);
+            }
+            else
+            {
+                return false;
+            }
         }
+
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
+
         public void Execute(object parameter)
         {
-            _execute(parameter);
+            _execteMethod(parameter);
         }
-        private readonly Action<object> _execute;
-        private readonly Predicate<object> _canExecute;
     }
 }

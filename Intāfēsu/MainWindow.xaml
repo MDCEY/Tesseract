@@ -28,6 +28,9 @@
 			<ListViewItem>
 				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" BorderThickness="0" x:Name="RecentPartsInPage" Click="updatePageSourceOnClick">Recent Parts In</Button>
 			</ListViewItem>
+			<ListViewItem>
+				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" BorderThickness="0" x:Name="SerialMonitorPage" Click="updatePageSourceOnClick">Serial Monitor</Button>
+			</ListViewItem>
 		</ListView>
 		<controls:TransitioningContentControl  Grid.Column="1" Transition="Left" >
 			<controls:MetroContentControl x:Name="FrameTransition">

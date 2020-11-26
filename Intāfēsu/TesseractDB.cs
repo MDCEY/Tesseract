@@ -59,6 +59,7 @@ namespace Intāfēsu
             public static string BookedInBreakDown => ReadResource(nameof(BookedInBreakDown) + ".sql"); //Done
             public static string ProductDetailsFromCall => ReadResource(nameof(ProductDetailsFromCall) + ".sql"); 
             public static string EngineerPartsMovement => ReadResource(nameof(EngineerPartsMovement) + ".sql"); //Done
+            public static string SerialMonitor => ReadResource(nameof(SerialMonitor) + ".sql"); //Done
             private static string ReadResource(string fileName)
             {
                 // Determine path
