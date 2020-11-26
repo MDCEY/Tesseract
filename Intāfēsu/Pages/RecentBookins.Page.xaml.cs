@@ -9,8 +9,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Shell;
 using System.Xml;
-using DYMO.Label.Framework;
-using Label = DYMO.Label.Framework.Label;
+//using DYMO.Label.Framework;
+//using Label = DYMO.Label.Framework.Label;
 
 namespace Intāfēsu
 {

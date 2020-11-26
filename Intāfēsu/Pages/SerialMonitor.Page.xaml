@@ -26,7 +26,7 @@
 			<Button Margin="2,0"  Grid.Column="1" Command="{Binding AddSerialCommand}">Add Serial Number</Button>
 			<TextBox Margin="2,0" Grid.Column="2" Text="{Binding Path=UserSerialNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 		</Grid>
-		<DataGrid x:Name="MonitoredSerialsWpfGrid" Grid.Row="1" ItemsSource="{Binding MonitoredSerialNumbers}"/>
+        <DataGrid x:Name="MonitoredSerialsWpfGrid" Grid.Row="1" ItemsSource="{Binding MonitoredSerialNumbers, Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
 
 	</Grid>
 

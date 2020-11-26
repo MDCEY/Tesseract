@@ -29,6 +29,7 @@ namespace Intāfēsu
             {
                 _monitoredSerialNumber = value;
                 NotifyPropertyChanged(nameof(MonitoredSerialNumber));
+                OnPropertyChanged(nameof(MonitoredSerialNumber));
             }
         }
         public ObservableCollection<MonitoredSerialNumber> MonitoredSerialNumbers
@@ -38,6 +39,7 @@ namespace Intāfēsu
             {
                 _monitoredSerialNumbers = value;
                 NotifyPropertyChanged(nameof(MonitoredSerialNumbers));
+                OnPropertyChanged(nameof(MonitoredSerialNumbers));
             }
         }
 
@@ -63,12 +65,57 @@ namespace Intāfēsu
 
         public ViewModelSerialMonitor()
         {
+            var dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += dispatcherTimer_Tick;
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
+            dispatcherTimer.Start();
+
             AddSerialCommand = new RelayCommand(executeAddSerial ,CanExecuteAddSerialCommand);
+            MonitoredSerialNumber = new MonitoredSerialNumber();
+            MonitoredSerialNumbers = new ObservableCollection<MonitoredSerialNumber>();
+            MonitoredSerialNumbers.CollectionChanged += new System.Collections.Specialized.NotifyCollectionChangedEventHandler(MonitoredSerialNumbers_CollectionChanged);
+        }
+
+        public async void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            updateDatagrid();
+            CollectionViewSource.GetDefaultView(MonitoredSerialNumbers).Refresh();
+
+        }
+
+
+        private async void updateDatagrid()
+        {
+
+            // Add tesseract query here
+
+            var rand = new Random();
+
+            foreach (var sn in MonitoredSerialNumbers)
+            {
+                //QueryDB for sn
+                //return results
+                var record = MonitoredSerialNumbers.FirstOrDefault(x => x.SerialNumber == sn.SerialNumber);
+                record.CallNumber = rand.Next(959595).ToString();
+                record.User = rand.Next(999).ToString();
+
+            }
+        }
+
+        private void MonitoredSerialNumbers_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            NotifyPropertyChanged(nameof(MonitoredSerialNumbers));
         }
 
         private void executeAddSerial(object parameter)
         {
-            MessageBox.Show("zZZZZ");
+            MonitoredSerialNumbers.Add(new MonitoredSerialNumber
+            {
+                DateAdded = DateTime.Now,
+                SerialNumber = UserSerialNumber,
+                CallNumber = "991922",
+                User = "406"
+            });
         }
     }
 
