@@ -10,7 +10,6 @@
 
 	<Page.Resources>
 		<local:ViewModelSerialMonitor x:Key="ViewModelSerialMonitor"/>
-		<local:MonSerialList x:Key="MonSerialList"/>
 	</Page.Resources>
 	<Grid DataContext="{Binding Source={StaticResource ViewModelSerialMonitor}}">
 		<Grid.RowDefinitions>
@@ -24,10 +23,10 @@
 				<ColumnDefinition Width="4*"/>
 			</Grid.ColumnDefinitions>
 			<Button Margin="2,0" Grid.Column="0">Import CSV</Button>
-			<Button Margin="2,0"  Grid.Column="1" Command="{Binding AddSerialNumberToDatabaseCommand}">Add Serial Number</Button>
-			<TextBox Margin="2,0" Grid.Column="2" Text="{Binding Path=SerialNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+			<Button Margin="2,0"  Grid.Column="1" Command="{Binding AddSerialCommand}">Add Serial Number</Button>
+			<TextBox Margin="2,0" Grid.Column="2" Text="{Binding Path=UserSerialNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 		</Grid>
-		<DataGrid x:Name="MonitoredSerialsWpfGrid" Grid.Row="1" DataContext="{Binding Source={StaticResource MonSerialList}}" ItemsSource="{Binding MonitoredSerials}"/>
+		<DataGrid x:Name="MonitoredSerialsWpfGrid" Grid.Row="1" ItemsSource="{Binding MonitoredSerialNumbers}"/>
 
 	</Grid>
 
