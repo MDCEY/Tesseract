@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -98,6 +98,7 @@ namespace Intāfēsu
                 var record = MonitoredSerialNumbers.FirstOrDefault(x => x.SerialNumber == sn.SerialNumber);
                 record.CallNumber = rand.Next(959595).ToString();
                 record.User = rand.Next(999).ToString();
+                CollectionViewSource.GetDefaultView(MonitoredSerialNumbers).Refresh();
 
             }
         }
