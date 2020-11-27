@@ -21,13 +21,15 @@
 				<ColumnDefinition Width="1.5*"/>
 				<ColumnDefinition Width="2.5*"/>
 				<ColumnDefinition Width="4*"/>
+				<ColumnDefinition Width="1*"/>
 			</Grid.ColumnDefinitions>
-			<Button Margin="2,0" Grid.Column="0">Import CSV</Button>
+			<Button Margin="2,0" Grid.Column="0" Command="{Binding ImportCsvCommand}">Import CSV</Button>
 			<Button Margin="2,0"  Grid.Column="1" Command="{Binding AddSerialCommand}">Add Serial Number</Button>
 			<TextBox Margin="2,0" Grid.Column="2" Text="{Binding Path=UserSerialNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+			<Ellipse Grid.Column="3"  Width="20" Height="20" Stroke="Black" StrokeThickness="1" Visibility="{Binding ScanningMonitor, Mode=OneWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
 		</Grid>
-        <DataGrid x:Name="MonitoredSerialsWpfGrid" Grid.Row="1" ItemsSource="{Binding MonitoredSerialNumbers, Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
-
+        <DataGrid CanUserDeleteRows="True" x:Name="MonitoredSerialsWpfGrid" Grid.Row="1" ItemsSource="{Binding MonitoredSerialNumbers, Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}"/>
+		
 	</Grid>
 
 </Page>
