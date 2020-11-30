@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kansū", "Kansū\Kansū.csproj", "{3ED352E4-06AE-4EBE-8688-37837958384C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intāfēsu", "Intāfēsu\Intāfēsu.csproj", "{592F6220-687B-4CF7-8592-256DF739E40C}"
 EndProject
 Global
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3ED352E4-06AE-4EBE-8688-37837958384C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3ED352E4-06AE-4EBE-8688-37837958384C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3ED352E4-06AE-4EBE-8688-37837958384C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3ED352E4-06AE-4EBE-8688-37837958384C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{592F6220-687B-4CF7-8592-256DF739E40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{592F6220-687B-4CF7-8592-256DF739E40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{592F6220-687B-4CF7-8592-256DF739E40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
