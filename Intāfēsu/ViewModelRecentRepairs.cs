@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+using System.Windows.Threading;
 using Dapper;
+using Intāfēsu.Properties;
 using LiveCharts;
 using LiveCharts.Wpf;
 
@@ -64,14 +58,14 @@ namespace Intāfēsu
 
         public ViewModelRecentRepairs()
         {
-            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += dispatcherTimer_Tick;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 10);
             dispatcherTimer.Start();
 
             Repair = new Repair();
             Repairs = new ObservableCollection<Repair>();
-            Repairs.CollectionChanged += new NotifyCollectionChangedEventHandler(Repairs_CollectionChanged);
+            Repairs.CollectionChanged += Repairs_CollectionChanged;
             RepairBreakDown = new SeriesCollection();
             GraphLabelList = new List<string>();
 
@@ -84,18 +78,17 @@ namespace Intāfēsu
 
         private void Update()
         {
-            var _ = Convert.FromBase64String(Properties.Resources.ConnectionString);
-            var Connection = new SqlConnection(Encoding.UTF8.GetString(_));
-            var Update = Connection.Query<Repair>(TesseractDb.Queries.RecentRepairs).ToList();
+            var _ = Convert.FromBase64String(Resources.ConnectionString);
+            var connection = new SqlConnection(Encoding.UTF8.GetString(_));
+            var update = connection.Query<Repair>(TesseractDb.Queries.RecentRepairs).ToList();
 
-            UpdateGraph(Update);
+            UpdateGraph(update);
 
 
-            foreach (Repair updateRepair in Update)
+            foreach (Repair updateRepair in update)
             {
                 if (Repairs.Any(x => x.SerialNumber == updateRepair.SerialNumber))
                 {
-                    continue;
                 }
                 else
                 {
@@ -110,7 +103,7 @@ namespace Intāfēsu
             foreach (var up in allRepairs.GroupBy(x => x.EngineerName))
             {
 
-                if (!RepairBreakDown.Any(x => x.Title == up.Key))
+                if (RepairBreakDown.All(x => x.Title != up.Key))
                 {
                     //If engineer not in graph
                     RepairBreakDown.Add(new RowSeries
@@ -118,19 +111,21 @@ namespace Intāfēsu
                         Title = up.Key,
                         Values = new ChartValues<int> { allRepairs.Count(x => x.EngineerName == up.Key) },
                     });
-                    
-                    GraphLabelList.Add(up.Key);
+                    //GraphLabelList.Add(up.Key);
                 }
                 else
                 {
                     // Engineer already in breakdown. Select and update their object
                     var breakDownRow = RepairBreakDown.SingleOrDefault(x => x.Title == up.Key);
-                    if ((int)breakDownRow.Values[0] != allRepairs.Count(x => x.EngineerName == up.Key))
+                    if (breakDownRow != null && (int)breakDownRow.Values[0] != allRepairs.Count(x => x.EngineerName == up.Key))
                     {
                         breakDownRow.Values[0] = allRepairs.Count(x => x.EngineerName == up.Key);
                     }
                 }
             }
+
+            
+
         }
 
         public  void dispatcherTimer_Tick(object sender, EventArgs e)

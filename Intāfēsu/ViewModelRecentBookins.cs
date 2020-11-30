@@ -39,7 +39,7 @@ namespace Intāfēsu
         public ViewModelRecentBookins()
         {
             System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Tick += dispatcherTimer_Tick;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 10);
             dispatcherTimer.Start();
 
@@ -76,6 +76,7 @@ namespace Intāfēsu
 
                     if (TempPart.Total == Total) continue;
                     TempPart.Total = Total;
+                    TempPart.LastBookedIn = Date;
 
                 }
             }
