@@ -7,39 +7,44 @@
 					  xmlns:local="clr-namespace:Intāfēsu"
 					  xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
 					  mc:Ignorable="d"
-        Title="Intāfēsu" Height="450" Width="800"
+        Title="Tesseract Uno" Height="450" Width="800"
         SaveWindowPosition="True"
         BorderThickness="0" 
         GlowBrush="Black">
+
+	<Window.Resources>
+		<local:ViewModelMainWindow x:Key="ViewModelMainWindow"/>
+	</Window.Resources>
 	<controls:MetroWindow.RightWindowCommands>
 		<controls:WindowCommands>
-			<Button>
+			<Button x:Name="AboutPage"  DataContext="{Binding Source={StaticResource ViewModelMainWindow}}" Command="{Binding ChangePageCommand}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">
 				<iconPacks:FontAwesome Width="22" Height="22" Kind="InfinitySolid"/>
 			</Button>
 		</controls:WindowCommands>
 	</controls:MetroWindow.RightWindowCommands>
-	<Grid>
+	<Grid DataContext="{Binding Source={StaticResource ViewModelMainWindow}}">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*"></ColumnDefinition>
 			<ColumnDefinition Width="4*"></ColumnDefinition>
 		</Grid.ColumnDefinitions>
 		<ListView Grid.Column="0" x:Name="MainNavigation" BorderThickness="0 0 1 0" Margin="0 0 5 0">
 			<ListViewItem>
-				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" x:Name="RecentRepairsPage" BorderThickness="0" Click="updatePageSourceOnClick">Recent Repairs</Button>
+				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" x:Name="RecentRepairsPage" BorderThickness="0" Command="{Binding ChangePageCommand}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">Recent Repairs</Button>
 			</ListViewItem>
 			<ListViewItem>
-				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" x:Name="RecentBookinsPage" BorderThickness="0" Click="updatePageSourceOnClick">Recently Booked In</Button>
+				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" x:Name="RecentBookinsPage" BorderThickness="0" Command="{Binding ChangePageCommand}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">Recently Booked In</Button>
 			</ListViewItem>
 			<ListViewItem>
-				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" BorderThickness="0" x:Name="RecentPartsInPage" Click="updatePageSourceOnClick">Recent Parts In</Button>
+				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" BorderThickness="0" x:Name="RecentPartsInPage" Command="{Binding ChangePageCommand}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">Recent Parts In</Button>
 			</ListViewItem>
 			<ListViewItem>
-				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" BorderThickness="0" x:Name="SerialMonitorPage" Click="updatePageSourceOnClick">Serial Monitor</Button>
+				<Button Style="{DynamicResource MahApps.Styles.Button.Dialogs}" BorderThickness="0" x:Name="SerialMonitorPage" Command="{Binding ChangePageCommand}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">Serial Monitor</Button>
 			</ListViewItem>
 		</ListView>
 		<controls:TransitioningContentControl  Grid.Column="1" Transition="Left" >
 			<controls:MetroContentControl x:Name="FrameTransition">
-				<Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Source="Pages/About.Page.xaml"/>
+				<Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Source="{Binding MainFrameSource}"/>
+				<!--<Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Source="Pages/About.Page.xaml"/>-->
 			</controls:MetroContentControl>		
 		</controls:TransitioningContentControl>
 		

@@ -11,7 +11,21 @@
 	<Page.Resources>
 		<intāfēsu:ViewModelMainWindow x:Key="ViewModelMainWindow"/>
 	</Page.Resources>
-	<StackPanel DataContext="{Binding Source={StaticResource ViewModelMainWindow}}">
-		<TextBlock Text="{Binding CurrentVersion}"></TextBlock>
-    </StackPanel>
+	<Grid DataContext="{Binding Source={StaticResource ViewModelMainWindow}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="1" Grid.Column="1">
+            <Image Source="../Resources/logo.ico"></Image>
+	        <TextBlock DockPanel.Dock="Bottom" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding CurrentVersion}"/>
+        </DockPanel>
+
+	</Grid>
 </Page>
