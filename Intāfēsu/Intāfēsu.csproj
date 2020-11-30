@@ -176,6 +176,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -198,6 +199,9 @@
     <Compile Include="BookedInPart.cs" />
     <Compile Include="CommandHandler.cs" />
     <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="Pages\About.Page.xaml.cs">
+      <DependentUpon>About.Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RecentBookins.Page.xaml.cs">
       <DependentUpon>RecentBookins.Page.xaml</DependentUpon>
     </Compile>
@@ -219,6 +223,7 @@
     <Compile Include="RecentAddedParts.cs" />
     <Compile Include="RecentBookins.cs" />
     <Compile Include="RecentlyMovedToBenchKits.cs" />
+    <Compile Include="ViewModelMainWindow.cs" />
     <Compile Include="ViewModelRecentPartsIn.cs" />
     <Compile Include="ViewModelRecentRepairs.cs" />
     <Compile Include="Repair.cs" />
@@ -239,6 +244,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\About.Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RecentBookins.Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

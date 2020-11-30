@@ -5,14 +5,19 @@
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
 					  xmlns:local="clr-namespace:Intāfēsu"
-                      mc:Ignorable="d"
+					  xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+					  mc:Ignorable="d"
         Title="Intāfēsu" Height="450" Width="800"
         SaveWindowPosition="True"
         BorderThickness="0" 
         GlowBrush="Black">
-	<Window.DataContext>
-		<local:MainWindowViewModel/>
-	</Window.DataContext>
+	<controls:MetroWindow.RightWindowCommands>
+		<controls:WindowCommands>
+			<Button>
+				<iconPacks:FontAwesome Width="22" Height="22" Kind="InfinitySolid"/>
+			</Button>
+		</controls:WindowCommands>
+	</controls:MetroWindow.RightWindowCommands>
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*"></ColumnDefinition>
@@ -34,8 +39,9 @@
 		</ListView>
 		<controls:TransitioningContentControl  Grid.Column="1" Transition="Left" >
 			<controls:MetroContentControl x:Name="FrameTransition">
-				<Frame NavigationUIVisibility="Hidden" x:Name="MainFrame"/>
+				<Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Source="Pages/About.Page.xaml"/>
 			</controls:MetroContentControl>		
 		</controls:TransitioningContentControl>
+		
 	</Grid>
 </controls:MetroWindow>
