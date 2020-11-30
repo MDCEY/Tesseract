@@ -63,6 +63,17 @@ namespace Intāfēsu
         }
         public ICommand AddSerialCommand { get; set; }
         public ICommand ImportCsvCommand { get; set; }
+        private DateTime _lastscan;
+
+        public DateTime LastScan
+        {
+            get => _lastscan;
+            set
+            {
+                _lastscan = value;
+                OnPropertyChanged(nameof(LastScan));
+            }
+        }
 
         public string UserSerialNumber
         {
@@ -100,6 +111,7 @@ namespace Intāfēsu
             dispatcherTimer.Interval = new TimeSpan(0, 0, 10);
             dispatcherTimer.Start();
 
+            LastScan = new DateTime();
             AddSerialCommand = new RelayCommand(executeAddSerial ,CanExecuteAddSerialCommand);
             ImportCsvCommand = new RelayCommand(executeImportCsv, CanExecuteImportCsvCommand);
             MonitoredSerialNumber = new MonitoredSerialNumber();
@@ -119,7 +131,7 @@ namespace Intāfēsu
             {
                 //retry on next tick
             }
-
+            LastScan = DateTime.Now;
         }
 
 
