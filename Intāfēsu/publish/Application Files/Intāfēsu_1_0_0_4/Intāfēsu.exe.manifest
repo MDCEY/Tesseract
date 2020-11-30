@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Intāfēsu.exe" size="242176">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Intāfēsu.exe" size="237568">
       <assemblyIdentity name="Intāfēsu" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4l/vJvkAj//n6+zv3GPof9mIBRyzAvStNrBay6tJxFU=</dsig:DigestValue>
+        <dsig:DigestValue>aSYxKWqlquNuHoyldBpiG2OSMU8ix8RDo7PJRNdx1kA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
